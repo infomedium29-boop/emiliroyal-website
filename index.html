@@ -10,34 +10,69 @@
   /* HERO */
   .hero {
     min-height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 4rem 7rem;
     position: relative;
     overflow: hidden;
   }
-  .hero-left {
-    background: var(--bg);
-    display: flex; flex-direction: column;
-    justify-content: center;
-    padding: 10rem 4rem 5rem;
-    position: relative; z-index: 2;
+
+  /* VIDEO BACKGROUND */
+  .hero-video {
+    position: absolute; inset: 0;
+    z-index: 0;
   }
-  .hero-right {
-    position: relative; overflow: hidden;
-  }
-  .hero-right img {
+  .hero-video video {
     width: 100%; height: 100%;
     object-fit: cover;
-    filter: saturate(0.85) brightness(0.95);
-    transition: transform 8s ease;
+    filter: saturate(0.7) brightness(0.55);
   }
-  .hero-right:hover img { transform: scale(1.04); }
-  .hero-right::before {
+  .hero-video::after {
     content: '';
     position: absolute; inset: 0;
-    background: linear-gradient(to right, var(--bg) 0%, transparent 20%);
-    z-index: 1; pointer-events: none;
+    background: linear-gradient(
+      to top,
+      rgba(26,24,18,0.92) 0%,
+      rgba(26,24,18,0.4) 50%,
+      rgba(26,24,18,0.15) 100%
+    );
   }
+
+  .hero-left {
+    position: relative; z-index: 2;
+    max-width: 700px;
+  }
+
+  .hero h1 { color: #f0ede8 !important; }
+  .hero h1 em { color: #c9a84c !important; }
+  .hero h1 strong { color: #f0ede8 !important; }
+  .hero .hero-sub { color: rgba(240,237,232,0.75) !important; }
+  .hero .hero-eyebrow span { color: #c9a84c !important; }
+  .hero .hero-line { background: #c9a84c !important; }
+  .hero .hero-badge-num { color: #f0ede8 !important; }
+  .hero .hero-badge-label { color: rgba(240,237,232,0.6) !important; }
+  .hero .hero-badge-divider { background: rgba(240,237,232,0.2) !important; }
+  .hero .btn-ghost { border-color: rgba(240,237,232,0.3) !important; color: rgba(240,237,232,0.7) !important; }
+  .hero .btn-ghost:hover { border-color: #c9a84c !important; color: #c9a84c !important; }
+
+  /* VIDEO CREDIT */
+  .video-credit {
+    position: absolute; bottom: 1rem; right: 1.5rem;
+    font-size: 0.62rem; color: rgba(240,237,232,0.3);
+    letter-spacing: 0.08em; z-index: 2;
+  }
+
+  /* SCROLL INDICATOR */
+  .hero-scroll {
+    position: absolute; bottom: 2.5rem; left: 50%;
+    transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 0.4rem;
+    color: rgba(240,237,232,0.5); font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase;
+    animation: fadeIn 1s 1.4s both; z-index: 2;
+  }
+  .scroll-line { width: 1px; height: 36px; background: linear-gradient(to bottom, rgba(240,237,232,0.5), transparent); animation: scrollDrop 2s ease-in-out infinite; }
+  @keyframes scrollDrop { 0%{transform:scaleY(0);transform-origin:top} 50%{transform:scaleY(1);transform-origin:top} 51%{transform:scaleY(1);transform-origin:bottom} 100%{transform:scaleY(0);transform-origin:bottom} }
 
   .hero-eyebrow {
     display: flex; align-items: center; gap: 0.8rem;
@@ -207,6 +242,12 @@
 
 <!-- HERO -->
 <section class="hero">
+  <div class="hero-video">
+    <video autoplay muted loop playsinline>
+      <source src="https://videos.pexels.com/video-files/4531037/4531037-hd_1920_1080_25fps.mp4" type="video/mp4">
+    </video>
+  </div>
+
   <div class="hero-left">
     <div class="hero-eyebrow">
       <div class="hero-line"></div>
@@ -242,9 +283,9 @@
       </div>
     </div>
   </div>
-  <div class="hero-right">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Dubrovnik_in_Croatia.jpg/1280px-Dubrovnik_in_Croatia.jpg" alt="Dubrovnik">
-  </div>
+
+  <div class="hero-scroll"><div class="scroll-line"></div>Scroll</div>
+  <div class="video-credit">Video: Luciann Photography · Pexels</div>
 </section>
 
 <!-- INTRO STRIP -->
