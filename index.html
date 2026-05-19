@@ -72,13 +72,6 @@
     background: rgba(201,168,76,0.08) !important;
   }
 
-  /* VIDEO CREDIT */
-  .video-credit {
-    position: absolute; bottom: 1rem; right: 1.5rem;
-    font-size: 0.62rem; color: rgba(240,237,232,0.3);
-    letter-spacing: 0.08em; z-index: 2;
-  }
-
   /* SCROLL INDICATOR */
   .hero-scroll {
     position: absolute; bottom: 2.5rem; left: 50%;
@@ -213,11 +206,12 @@
   .whatsapp-btn:hover { background:rgba(37,211,102,0.22); }
 
   @media (max-width:900px) {
-    .hero { grid-template-columns:1fr; min-height:auto; }
-    .hero-left { padding: 8rem 1.5rem 4rem; }
-    .hero-right { height:300px; }
-    .hero-right::before { background:linear-gradient(to bottom, var(--bg) 0%, transparent 30%); }
-    .hero-badge { display:none; }
+    .hero { padding: 0 1.5rem 5rem; }
+    .hero h1 { font-size: clamp(2.4rem, 10vw, 3.5rem); }
+    .hero-actions { flex-direction: column; align-items: stretch; gap: 0.8rem; }
+    .hero .btn-primary, .hero .btn-ghost { width: 100%; justify-content: center; }
+    .hero-badge { gap: 1.2rem; }
+    .hero-badge-num { font-size: 1.5rem; }
     .intro-strip { padding:2rem 1.5rem; }
     .service-row { grid-template-columns:60px 1fr; gap:1.5rem; }
     .service-row p, .service-row-img, .service-row-arrow { display:none; }
@@ -303,7 +297,6 @@
   </div>
 
   <div class="hero-scroll"><div class="scroll-line"></div>Scroll</div>
-  <div class="video-credit">Video: Luciann Photography · Pexels</div>
 </section>
 
 <!-- INTRO STRIP -->
