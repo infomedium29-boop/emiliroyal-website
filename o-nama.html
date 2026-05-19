@@ -8,35 +8,33 @@
 <link rel="stylesheet" href="style.css">
 <style>
   .about-intro { background: var(--bg); }
-  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
-  .about-img { position: relative; }
-  .about-img img { width:100%; height:550px; object-fit:cover; filter:brightness(0.8) saturate(0.7); }
-  .about-img::before { content:''; position:absolute; top:-20px; left:-20px; right:20px; bottom:20px; border:1px solid rgba(201,168,76,0.2); z-index:0; }
-  .about-img img { position:relative; z-index:1; }
+  .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:6rem; align-items:center; }
+  .about-img { position:relative; }
+  .about-img img { width:100%; height:540px; object-fit:cover; filter:saturate(0.8) brightness(0.95); position:relative; z-index:1; }
+  .about-img::before { content:''; position:absolute; top:-20px; left:-20px; right:20px; bottom:20px; border:1px solid rgba(154,123,60,0.2); z-index:0; }
   .about-text p { color:var(--muted); font-size:0.95rem; line-height:1.85; margin-bottom:1.5rem; }
-  .about-text p:last-child { margin-bottom:0; }
   .about-text strong { color:var(--text); font-weight:500; }
 
-  .quote-band { background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:5rem 4rem; text-align:center; position:relative; overflow:hidden; }
-  .quote-band::before { content:'"'; position:absolute; font-family:'Cormorant Garamond',serif; font-size:20rem; font-weight:300; color:rgba(201,168,76,0.04); top:-5rem; left:50%; transform:translateX(-50%); line-height:1; pointer-events:none; }
+  .numbers { background:var(--bg2); border-top:1px solid var(--border2); border-bottom:1px solid var(--border2); }
+  .numbers-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--border2); border:1px solid var(--border2); }
+  .number-item { padding:3rem 2rem; background:var(--bg2); text-align:center; transition:background 0.3s; }
+  .number-item:hover { background:var(--bg3); }
+  .number-big { font-family:'Cormorant Garamond',serif; font-size:3rem; font-weight:300; color:var(--gold); letter-spacing:-0.02em; line-height:1; }
+  .number-label { font-size:0.72rem; color:var(--muted); margin-top:0.5rem; letter-spacing:0.1em; text-transform:uppercase; }
+
+  .quote-band { background:var(--bg); border-top:1px solid var(--border2); border-bottom:1px solid var(--border2); padding:5rem 4rem; text-align:center; position:relative; overflow:hidden; }
+  .quote-band::before { content:'"'; position:absolute; font-family:'Cormorant Garamond',serif; font-size:20rem; font-weight:300; color:rgba(154,123,60,0.05); top:-5rem; left:50%; transform:translateX(-50%); line-height:1; pointer-events:none; }
   .quote-band blockquote { font-family:'Cormorant Garamond',serif; font-size:clamp(1.3rem,3vw,2rem); font-weight:300; font-style:italic; color:var(--text); max-width:650px; margin:0 auto 1.5rem; line-height:1.6; }
   .quote-band blockquote em { color:var(--gold); }
   .quote-band cite { font-size:0.75rem; color:var(--muted); letter-spacing:0.15em; text-transform:uppercase; font-style:normal; }
 
-  .values { background: var(--bg); }
-  .values-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--border); border:1px solid var(--border); margin-top:3.5rem; }
-  .value-card { background:var(--bg); padding:2.5rem; transition:background 0.3s; }
-  .value-card:hover { background:var(--bg2); }
-  .value-icon { font-size:1.5rem; margin-bottom:1.2rem; color:var(--gold); display:block; }
+  .values { background:var(--bg2); }
+  .values-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--border2); border:1px solid var(--border2); margin-top:3.5rem; }
+  .value-card { background:var(--bg2); padding:2.5rem; transition:background 0.3s; cursor:none; }
+  .value-card:hover { background:var(--bg3); }
+  .value-icon { font-size:1.2rem; margin-bottom:1.2rem; color:var(--gold); display:block; }
   .value-card h3 { font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:400; margin-bottom:0.6rem; }
   .value-card p { font-size:0.88rem; color:var(--muted); line-height:1.7; }
-
-  .numbers { background:var(--bg2); border-top:1px solid var(--border); }
-  .numbers-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--border); border:1px solid var(--border); }
-  .number-item { padding:3rem 2rem; background:var(--bg2); text-align:center; transition:background 0.3s; }
-  .number-item:hover { background:var(--bg3); }
-  .number-big { font-family:'Cormorant Garamond',serif; font-size:3.2rem; font-weight:300; color:var(--gold); letter-spacing:-0.02em; line-height:1; }
-  .number-label { font-size:0.72rem; color:var(--muted); margin-top:0.5rem; letter-spacing:0.1em; text-transform:uppercase; }
 
   @media (max-width:900px) {
     .about-grid { grid-template-columns:1fr; gap:3rem; }
@@ -48,7 +46,6 @@
 </style>
 </head>
 <body>
-<canvas id="three-bg"></canvas>
 <div class="cursor" id="cursor"></div>
 <div class="cursor-follower" id="cursorFollower"></div>
 
@@ -75,18 +72,19 @@
   <div class="mobile-menu-cta"><a href="kontakt.html">Rezerviraj</a></div>
 </div>
 
+<!-- PAGE HERO -->
 <div class="page-hero">
-  <div class="page-hero-grid"></div>
-  <div class="page-hero-glow"></div>
+  <div class="page-hero-line"></div>
   <div class="page-hero-tag">O nama</div>
   <h1>Više od desetljeća<br>u <em>vašoj</em> službi</h1>
   <p class="page-hero-sub">Emili Royal Transfers — vaš pouzdani partner za privatni prijevoz u Dubrovniku i okolici.</p>
 </div>
 
+<!-- ABOUT -->
 <section class="about-intro">
   <div class="about-grid">
     <div class="about-img reveal">
-      <img src="https://images.unsplash.com/photo-1555990793-da11153b6b4b?w=800&q=80&auto=format&fit=crop" alt="Dubrovnik">
+      <img src="https://picsum.photos/id/1040/900/700" alt="Dubrovnik">
     </div>
     <div class="about-text">
       <div class="section-tag reveal">Naša priča</div>
@@ -97,75 +95,38 @@
         <p>Naš tim iskusnih vozača poznaje svaki kutak Dubrovnika i šire regije. Govorimo engleski, talijanski i hrvatski — prilagođavamo se vašim potrebama.</p>
         <p>Vjerujemo da svako putovanje treba biti <strong>ugodno iskustvo, ne izvor stresa.</strong> Zato nudimo fiksne cijene, točnost i profesionalnu uslugu koja će vas oduševiti.</p>
       </div>
-      <a href="kontakt.html" class="btn-primary reveal reveal-delay-3" style="margin-top:2rem;">
-        Kontaktirajte nas →
-      </a>
+      <a href="kontakt.html" class="btn-primary reveal reveal-delay-3" style="margin-top:2rem;">Kontaktirajte nas →</a>
     </div>
   </div>
 </section>
 
+<!-- NUMBERS -->
 <section class="numbers">
   <div class="numbers-grid">
-    <div class="number-item reveal">
-      <div class="number-big">10+</div>
-      <div class="number-label">Godina iskustva</div>
-    </div>
-    <div class="number-item reveal reveal-delay-1">
-      <div class="number-big">5000+</div>
-      <div class="number-label">Zadovoljnih putnika</div>
-    </div>
-    <div class="number-item reveal reveal-delay-2">
-      <div class="number-big">0–24</div>
-      <div class="number-label">Dostupnost</div>
-    </div>
-    <div class="number-item reveal reveal-delay-3">
-      <div class="number-big">4.9★</div>
-      <div class="number-label">Prosječna ocjena</div>
-    </div>
+    <div class="number-item reveal"><div class="number-big">10+</div><div class="number-label">Godina iskustva</div></div>
+    <div class="number-item reveal reveal-delay-1"><div class="number-big">5000+</div><div class="number-label">Zadovoljnih putnika</div></div>
+    <div class="number-item reveal reveal-delay-2"><div class="number-big">0–24</div><div class="number-label">Dostupnost</div></div>
+    <div class="number-item reveal reveal-delay-3"><div class="number-big">4.9★</div><div class="number-label">Prosječna ocjena</div></div>
   </div>
 </section>
 
+<!-- QUOTE -->
 <div class="quote-band">
-  <blockquote class="reveal">
-    "Svako putovanje je <em>posebno iskustvo</em> — naš je cilj da se tako i osjećate."
-  </blockquote>
+  <blockquote class="reveal">"Svako putovanje je <em>posebno iskustvo</em> — naš je cilj da se tako i osjećate."</blockquote>
   <cite class="reveal reveal-delay-1">— Emili Royal Transfers</cite>
 </div>
 
+<!-- VALUES -->
 <section class="values">
   <div class="section-tag reveal">Naše vrijednosti</div>
   <h2 class="section-title reveal reveal-delay-1">Što nas pokreće</h2>
   <div class="values-grid">
-    <div class="value-card reveal">
-      <span class="value-icon">✦</span>
-      <h3>Sigurnost</h3>
-      <p>Vaša sigurnost je naš prioritet broj jedan. Redovno servisirani vozili i iskusni vozači garancija su vašeg sigurnog dolaska.</p>
-    </div>
-    <div class="value-card reveal reveal-delay-1">
-      <span class="value-icon">✦</span>
-      <h3>Točnost</h3>
-      <p>Poštujemo vaše vrijeme. Uvijek smo na dogovorenom mjestu u dogovoreno vrijeme — bez izgovora.</p>
-    </div>
-    <div class="value-card reveal reveal-delay-2">
-      <span class="value-icon">✦</span>
-      <h3>Udobnost</h3>
-      <p>Klimatizirana vozila, čistoća i pristojnost — jer svaki gost zaslužuje tretman koji odgovara luksuznom odredištu poput Dubrovnika.</p>
-    </div>
-    <div class="value-card reveal reveal-delay-3">
-      <span class="value-icon">✦</span>
-      <h3>Transparentnost</h3>
-      <p>Fiksne cijene dogovorene unaprijed. Bez skrivenih troškova, bez iznenađenja na kraju vožnje.</p>
-    </div>
-    <div class="value-card reveal reveal-delay-4">
-      <span class="value-icon">✦</span>
-      <h3>Dostupnost</h3>
-      <p>Dostupni 0-24, 365 dana u godini. Kasni let ili rani jutarnji transfer — uvijek smo tu za vas.</p>
-    </div>
-    <div class="value-card reveal reveal-delay-4">
-      <span class="value-icon">✦</span>
-      <h3>Lokalnost</h3>
-      <p>Rodili smo se i odrasli u Dubrovniku. Poznajemo svaki kutak ovog lijepog grada i rado ćemo vam preporučiti skrivene dragulje.</p>
-    </div>
+    <div class="value-card reveal"><span class="value-icon">✦</span><h3>Sigurnost</h3><p>Vaša sigurnost je naš prioritet broj jedan. Redovno servisirani vozili i iskusni vozači garancija su vašeg sigurnog dolaska.</p></div>
+    <div class="value-card reveal reveal-delay-1"><span class="value-icon">✦</span><h3>Točnost</h3><p>Poštujemo vaše vrijeme. Uvijek smo na dogovorenom mjestu u dogovoreno vrijeme — bez izgovora.</p></div>
+    <div class="value-card reveal reveal-delay-2"><span class="value-icon">✦</span><h3>Udobnost</h3><p>Klimatizirana vozila, čistoća i pristojnost — jer svaki gost zaslužuje tretman koji odgovara luksuznom odredištu.</p></div>
+    <div class="value-card reveal reveal-delay-3"><span class="value-icon">✦</span><h3>Transparentnost</h3><p>Fiksne cijene dogovorene unaprijed. Bez skrivenih troškova, bez iznenađenja na kraju vožnje.</p></div>
+    <div class="value-card reveal reveal-delay-4"><span class="value-icon">✦</span><h3>Dostupnost</h3><p>Dostupni 0-24, 365 dana u godini. Kasni let ili rani jutarnji transfer — uvijek smo tu za vas.</p></div>
+    <div class="value-card reveal reveal-delay-4"><span class="value-icon">✦</span><h3>Lokalnost</h3><p>Rodili smo se i odrasli u Dubrovniku. Poznajemo svaki kutak ovog lijepog grada.</p></div>
   </div>
 </section>
 
@@ -209,9 +170,6 @@
     <p style="font-size:0.75rem;color:var(--muted);">Ulica od Nuncijate, Dubrovnik</p>
   </div>
 </footer>
-
 <script src="main.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="three-bg.js"></script>
 </body>
 </html>

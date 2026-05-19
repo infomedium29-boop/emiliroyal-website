@@ -3,81 +3,52 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kontakt & Rezervacija — Emili Royal Transfers Dubrovnik</title>
+<title>Rezervacija — Emili Royal Transfers Dubrovnik</title>
 <meta name="description" content="Rezervirajte privatni transfer u Dubrovniku. Kontaktirajte nas putem WhatsAppa, emaila ili kontakt obrasca. Odgovaramo unutar 1 sata.">
 <link rel="stylesheet" href="style.css">
 <style>
   .contact-section { background: var(--bg); }
-  .contact-layout { display: grid; grid-template-columns: 1fr 1.3fr; gap: 5rem; align-items: start; }
+  .contact-layout { display:grid; grid-template-columns:1fr 1.3fr; gap:5rem; align-items:start; }
 
-  .contact-left {}
   .contact-methods { display:flex; flex-direction:column; gap:0; margin-top:2.5rem; }
-  .contact-method { display:flex; gap:1.2rem; align-items:flex-start; padding:1.5rem 0; border-bottom:1px solid var(--border); transition:padding-left 0.3s; cursor:none; }
-  .contact-method:first-child { border-top:1px solid var(--border); }
+  .contact-method { display:flex; gap:1.2rem; align-items:flex-start; padding:1.5rem 0; border-bottom:1px solid var(--border2); transition:padding-left 0.3s; cursor:none; }
+  .contact-method:first-child { border-top:1px solid var(--border2); }
   .contact-method:hover { padding-left:0.5rem; }
-  .contact-method-icon { width:42px; height:42px; border:1px solid rgba(201,168,76,0.25); display:flex; align-items:center; justify-content:center; font-size:1rem; flex-shrink:0; color:var(--gold); transition:box-shadow 0.3s; }
-  .contact-method:hover .contact-method-icon { box-shadow:0 4px 20px rgba(201,168,76,0.15); }
-  .contact-method-label { font-size:0.68rem; font-weight:400; letter-spacing:0.15em; text-transform:uppercase; color:var(--muted); margin-bottom:0.3rem; }
-  .contact-method-value { font-size:0.95rem; color:var(--text); }
-  .contact-method-note { font-size:0.8rem; color:var(--muted); margin-top:0.1rem; }
+  .contact-method-icon { width:40px; height:40px; border:1px solid rgba(154,123,60,0.25); display:flex; align-items:center; justify-content:center; font-size:0.95rem; flex-shrink:0; color:var(--gold); transition:box-shadow 0.3s; }
+  .contact-method:hover .contact-method-icon { box-shadow:0 4px 20px rgba(154,123,60,0.12); }
+  .contact-method-label { font-size:0.68rem; font-weight:400; letter-spacing:0.15em; text-transform:uppercase; color:var(--muted); margin-bottom:0.2rem; }
+  .contact-method-value { font-size:0.92rem; color:var(--text); }
+  .contact-method-note { font-size:0.78rem; color:var(--muted); margin-top:0.1rem; }
 
-  .contact-form-wrap {
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    padding: 3rem;
-    position: relative; overflow: hidden;
-  }
-  .contact-form-wrap::before { content:''; position:absolute; width:250px; height:250px; background:radial-gradient(circle,rgba(201,168,76,0.05) 0%,transparent 70%); top:-80px; right:-80px; pointer-events:none; }
+  .contact-form-wrap { background:var(--bg2); border:1px solid var(--border2); padding:3rem; position:relative; overflow:hidden; }
   .contact-form-wrap h3 { font-family:'Cormorant Garamond',serif; font-size:1.6rem; font-weight:400; margin-bottom:0.4rem; }
   .contact-form-wrap > p { font-size:0.85rem; color:var(--muted); margin-bottom:2rem; }
   .contact-form { display:flex; flex-direction:column; gap:1rem; }
   .form-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
   .form-group { display:flex; flex-direction:column; gap:0.4rem; }
-  .form-group label { font-size:0.7rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--muted); font-family:'DM Sans',sans-serif; }
+  .form-group label { font-size:0.68rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--muted); font-family:'DM Sans',sans-serif; }
   .form-group input, .form-group textarea, .form-group select {
-    background: var(--bg3);
-    border: 1px solid var(--border);
-    color: var(--text);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.9rem;
-    padding: 0.85rem 1rem;
-    border-radius: 0;
-    outline: none;
-    transition: border-color 0.2s;
-    cursor: none;
-    width: 100%;
+    background:var(--bg); border:1px solid var(--border2); color:var(--text);
+    font-family:'DM Sans',sans-serif; font-size:0.9rem; padding:0.85rem 1rem;
+    border-radius:0; outline:none; transition:border-color 0.2s; cursor:none; width:100%;
   }
-  .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: rgba(201,168,76,0.5); }
+  .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color:rgba(154,123,60,0.5); }
   .form-group textarea { resize:vertical; min-height:120px; }
-  .form-group select option { background:var(--bg3); }
-  .form-submit {
-    background: var(--gold);
-    color: #000;
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 500;
-    font-size: 0.82rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    padding: 1rem 2rem;
-    border: none;
-    cursor: none;
-    display: flex; align-items: center; justify-content: center; gap: 0.5rem;
-    transition: background 0.2s, box-shadow 0.2s;
-    margin-top: 0.5rem; width: 100%;
-  }
-  .form-submit:hover { background: var(--gold2); box-shadow: 0 8px 30px rgba(201,168,76,0.25); }
+  .form-group select option { background:var(--bg2); }
+  .form-submit { background:var(--text); color:var(--bg); font-family:'DM Sans',sans-serif; font-weight:500; font-size:0.78rem; letter-spacing:0.14em; text-transform:uppercase; padding:1rem 2rem; border:none; cursor:none; display:flex; align-items:center; justify-content:center; gap:0.5rem; transition:background 0.2s; margin-top:0.5rem; width:100%; }
+  .form-submit:hover { background:var(--gold); }
   .form-note { font-size:0.75rem; color:var(--muted); text-align:center; margin-top:0.5rem; }
 
   .form-success { display:none; text-align:center; padding:3rem 1rem; }
   .form-success.show { display:block; }
   .form-success h3 { font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:400; margin-bottom:0.5rem; }
   .form-success p { color:var(--muted); font-size:0.9rem; }
-  .form-success .gold-icon { font-size:2.5rem; margin-bottom:1rem; color:var(--gold); }
+  .form-success .gold-icon { font-size:2rem; margin-bottom:1rem; color:var(--gold); }
 
-  .whatsapp-cta { background:var(--bg2); border-top:1px solid var(--border); padding:4rem; display:flex; align-items:center; justify-content:space-between; gap:2rem; flex-wrap:wrap; }
+  .whatsapp-cta { background:var(--bg2); border-top:1px solid var(--border2); padding:4rem; display:flex; align-items:center; justify-content:space-between; gap:2rem; flex-wrap:wrap; }
   .whatsapp-cta h3 { font-family:'Cormorant Garamond',serif; font-size:1.8rem; font-weight:400; }
   .whatsapp-cta p { color:var(--muted); font-size:0.88rem; margin-top:0.3rem; }
-  .whatsapp-big { display:inline-flex; align-items:center; gap:0.8rem; background:#25d366; color:#000; font-family:'DM Sans',sans-serif; font-weight:600; font-size:0.9rem; letter-spacing:0.08em; text-transform:uppercase; padding:1rem 2rem; text-decoration:none; cursor:none; transition:opacity 0.2s; }
+  .whatsapp-big { display:inline-flex; align-items:center; gap:0.8rem; background:#25d366; color:#fff; font-family:'DM Sans',sans-serif; font-weight:600; font-size:0.82rem; letter-spacing:0.1em; text-transform:uppercase; padding:1rem 2rem; text-decoration:none; cursor:none; transition:opacity 0.2s; }
   .whatsapp-big:hover { opacity:0.9; }
 
   @media (max-width:900px) {
@@ -89,7 +60,6 @@
 </style>
 </head>
 <body>
-<canvas id="three-bg"></canvas>
 <div class="cursor" id="cursor"></div>
 <div class="cursor-follower" id="cursorFollower"></div>
 
@@ -116,14 +86,15 @@
   <div class="mobile-menu-cta"><a href="kontakt.html">Rezerviraj</a></div>
 </div>
 
+<!-- PAGE HERO -->
 <div class="page-hero">
-  <div class="page-hero-grid"></div>
-  <div class="page-hero-glow"></div>
+  <div class="page-hero-line"></div>
   <div class="page-hero-tag">Rezervacija</div>
   <h1>Rezervirajte<br>vaš <em>transfer</em></h1>
   <p class="page-hero-sub">Ispunite obrazac ili nas kontaktirajte direktno. Odgovaramo unutar 1 sata.</p>
 </div>
 
+<!-- CONTACT -->
 <section class="contact-section">
   <div class="contact-layout">
     <div class="contact-left">
@@ -171,62 +142,35 @@
         <p>Ispunite obrazac i javit ćemo se u najkraćem mogućem roku.</p>
         <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
           <div class="form-row">
-            <div class="form-group">
-              <label>Ime i prezime *</label>
-              <input type="text" placeholder="Vaše ime" required>
-            </div>
-            <div class="form-group">
-              <label>Email *</label>
-              <input type="email" placeholder="vas@email.com" required>
-            </div>
+            <div class="form-group"><label>Ime i prezime *</label><input type="text" placeholder="Vaše ime" required></div>
+            <div class="form-group"><label>Email *</label><input type="email" placeholder="vas@email.com" required></div>
           </div>
           <div class="form-row">
-            <div class="form-group">
-              <label>Telefon / WhatsApp</label>
-              <input type="tel" placeholder="+385 ...">
-            </div>
-            <div class="form-group">
-              <label>Broj putnika</label>
-              <select>
-                <option>1 putnik</option>
-                <option>2 putnika</option>
-                <option>3-4 putnika</option>
-                <option>5-6 putnika</option>
-                <option>7+ putnika</option>
-              </select>
+            <div class="form-group"><label>Telefon / WhatsApp</label><input type="tel" placeholder="+385 ..."></div>
+            <div class="form-group"><label>Broj putnika</label>
+              <select><option>1 putnik</option><option>2 putnika</option><option>3-4 putnika</option><option>5-6 putnika</option><option>7+ putnika</option></select>
             </div>
           </div>
-          <div class="form-group">
-            <label>Vrsta usluge *</label>
+          <div class="form-group"><label>Vrsta usluge *</label>
             <select required>
               <option value="">Odaberite uslugu</option>
               <option>Prijevoz do/od zračne luke</option>
               <option>Gradski prijevoz — Dubrovnik</option>
               <option>Međugradski transfer</option>
               <option>Izlet brodom</option>
-              <option>Višednevni izlet</option>
               <option>Ostalo</option>
             </select>
           </div>
           <div class="form-row">
-            <div class="form-group">
-              <label>Datum putovanja</label>
-              <input type="date">
-            </div>
-            <div class="form-group">
-              <label>Željeno vrijeme</label>
-              <input type="time">
-            </div>
+            <div class="form-group"><label>Datum putovanja</label><input type="date"></div>
+            <div class="form-group"><label>Željeno vrijeme</label><input type="time"></div>
           </div>
-          <div class="form-group">
-            <label>Poruka / Detalji rute</label>
-            <textarea placeholder="Opišite rutu, posebne zahtjeve ili pitanja..."></textarea>
-          </div>
+          <div class="form-group"><label>Poruka / Detalji rute</label><textarea placeholder="Opišite rutu, posebne zahtjeve ili pitanja..."></textarea></div>
           <button type="submit" class="form-submit" id="submitBtn">
             Pošalji rezervaciju
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 8h12M10 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
-          <p class="form-note">* Obavezna polja · Podaci su sigurni i neće biti dijeljeni</p>
+          <p class="form-note">* Obavezna polja · Podaci su sigurni</p>
         </form>
         <div class="form-success" id="formSuccess">
           <div class="gold-icon">✦</div>
@@ -238,7 +182,7 @@
   </div>
 </section>
 
-<!-- WHATSAPP CTA -->
+<!-- WHATSAPP -->
 <div class="whatsapp-cta">
   <div>
     <h3>Preferirate WhatsApp?</h3>
@@ -290,10 +234,7 @@
     <p style="font-size:0.75rem;color:var(--muted);">Ulica od Nuncijate, Dubrovnik</p>
   </div>
 </footer>
-
 <script src="main.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="three-bg.js"></script>
 <script>
 function handleSubmit(e) {
   e.preventDefault();

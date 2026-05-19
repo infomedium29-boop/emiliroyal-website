@@ -9,54 +9,40 @@
 <style>
   .service-block {
     padding: 6rem 4rem;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--border2);
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 6rem;
     align-items: center;
   }
+  .service-block:nth-child(odd) { background: var(--bg); }
   .service-block:nth-child(even) { background: var(--bg2); direction: rtl; }
   .service-block:nth-child(even) > * { direction: ltr; }
-  .service-block:nth-child(odd) { background: var(--bg); }
 
-  .service-block-img {
-    position: relative; overflow: hidden;
-  }
-  .service-block-img img {
-    width: 100%; height: 420px; object-fit: cover;
-    filter: brightness(0.8) saturate(0.75);
-    transition: transform 0.6s ease;
-  }
+  .service-block-img { position: relative; overflow: hidden; }
+  .service-block-img img { width:100%; height:420px; object-fit:cover; filter:saturate(0.8) brightness(0.95); transition:transform 0.6s ease; }
   .service-block-img:hover img { transform: scale(1.04); }
-  .service-block-img::after {
-    content: '';
-    position: absolute; inset: 0;
-    border: 1px solid rgba(201,168,76,0.15);
-    pointer-events: none;
-  }
+  .service-block-img::after { content:''; position:absolute; inset:0; border:1px solid rgba(154,123,60,0.15); pointer-events:none; }
 
-  .service-block-content {}
-  .service-block-num { font-size: 4rem; font-family: 'Cormorant Garamond', serif; font-weight: 300; color: rgba(201,168,76,0.1); line-height: 1; margin-bottom: 0.5rem; }
-  .service-block-content h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3vw, 2.8rem); font-weight: 400; margin-bottom: 1.2rem; line-height: 1.1; }
-  .service-block-content h2 em { color: var(--gold); font-style: italic; }
-  .service-block-content p { color: var(--muted); font-size: 0.95rem; line-height: 1.8; margin-bottom: 2rem; }
+  .service-block-num { font-family:'Cormorant Garamond',serif; font-size:5rem; font-weight:300; color:rgba(154,123,60,0.1); line-height:1; margin-bottom:0.5rem; }
+  .service-block-content h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(1.8rem,3vw,2.8rem); font-weight:400; margin-bottom:1.2rem; line-height:1.1; }
+  .service-block-content h2 em { color:var(--gold); font-style:italic; }
+  .service-block-content p { color:var(--muted); font-size:0.92rem; line-height:1.85; margin-bottom:2rem; }
 
-  .service-features { list-style: none; display: flex; flex-direction: column; gap: 0; margin-bottom: 2.5rem; }
-  .service-features li { display: flex; align-items: center; gap: 0.8rem; padding: 0.8rem 0; border-bottom: 1px solid var(--border); font-size: 0.88rem; color: var(--muted); }
-  .service-features li::before { content: '✦'; color: var(--gold); font-size: 0.6rem; flex-shrink: 0; }
+  .price-note { display:inline-block; background:rgba(154,123,60,0.08); border:1px solid rgba(154,123,60,0.2); color:var(--gold); font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; padding:0.35rem 0.9rem; margin-bottom:1.5rem; font-family:'DM Sans',sans-serif; }
 
-  .price-note { display: inline-block; background: var(--gold-muted); border: 1px solid rgba(201,168,76,0.25); color: var(--gold); font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.4rem 1rem; margin-bottom: 1.5rem; font-family: 'DM Sans', sans-serif; }
+  .service-features { list-style:none; display:flex; flex-direction:column; gap:0; margin-bottom:2.5rem; }
+  .service-features li { display:flex; align-items:center; gap:0.8rem; padding:0.8rem 0; border-bottom:1px solid var(--border2); font-size:0.88rem; color:var(--muted); }
+  .service-features li::before { content:'✦'; color:var(--gold); font-size:0.55rem; flex-shrink:0; }
 
-  @media (max-width: 900px) {
-    .service-block { grid-template-columns: 1fr; gap: 2.5rem; padding: 4rem 1.5rem; }
-    .service-block:nth-child(even) { direction: ltr; }
-    .service-block-img img { height: 260px; }
-    .service-block-num { font-size: 3rem; }
+  @media (max-width:900px) {
+    .service-block { grid-template-columns:1fr; gap:2.5rem; padding:4rem 1.5rem; }
+    .service-block:nth-child(even) { direction:ltr; }
+    .service-block-img img { height:240px; }
   }
 </style>
 </head>
 <body>
-<canvas id="three-bg"></canvas>
 <div class="cursor" id="cursor"></div>
 <div class="cursor-follower" id="cursorFollower"></div>
 
@@ -83,9 +69,9 @@
   <div class="mobile-menu-cta"><a href="kontakt.html">Rezerviraj</a></div>
 </div>
 
+<!-- PAGE HERO -->
 <div class="page-hero">
-  <div class="page-hero-grid"></div>
-  <div class="page-hero-glow"></div>
+  <div class="page-hero-line"></div>
   <div class="page-hero-tag">Naše usluge</div>
   <h1>Sve što trebate<br>za <em>savršeno</em> putovanje</h1>
   <p class="page-hero-sub">Od dolaska na aerodrom do ekskluzivnih izleta — pokrivamo sve vaše prijevozne potrebe u Dubrovniku i okolici.</p>
@@ -94,13 +80,13 @@
 <!-- SERVICE 1 -->
 <div class="service-block">
   <div class="service-block-img reveal">
-    <img src="https://images.unsplash.com/photo-1606768666853-403c90a981ad?w=800&q=80&auto=format&fit=crop" alt="Airport transfer Dubrovnik">
+    <img src="https://picsum.photos/id/1031/900/600" alt="Airport transfer Dubrovnik">
   </div>
   <div class="service-block-content">
     <div class="service-block-num reveal">01</div>
     <div class="section-tag reveal">Airport Transfer</div>
     <h2 class="reveal reveal-delay-1">Prijevoz do<br><em>zračne luke</em></h2>
-    <p class="reveal reveal-delay-2">Nikad više stresa zbog kasnjenja ili propuštenog leta. Pratimo vaš let i čekamo vas bez obzira na promjene rasporeda. Dočekat ćemo vas s tablom s imenom i pomoći s prtljagom.</p>
+    <p class="reveal reveal-delay-2">Nikad više stresa zbog kasnjenja ili propuštenog leta. Pratimo vaš let i čekamo vas bez obzira na promjene rasporeda.</p>
     <div class="price-note reveal reveal-delay-2">Fiksna cijena · Bez skrivenih troškova</div>
     <ul class="service-features reveal reveal-delay-3">
       <li>Praćenje leta u realnom vremenu</li>
@@ -116,13 +102,13 @@
 <!-- SERVICE 2 -->
 <div class="service-block">
   <div class="service-block-img reveal">
-    <img src="https://images.unsplash.com/photo-1555990793-da11153b6b4b?w=800&q=80&auto=format&fit=crop" alt="Gradski prijevoz Dubrovnik">
+    <img src="https://picsum.photos/id/1057/900/600" alt="Gradski prijevoz Dubrovnik">
   </div>
   <div class="service-block-content">
     <div class="service-block-num reveal">02</div>
     <div class="section-tag reveal">Gradski prijevoz</div>
     <h2 class="reveal reveal-delay-1">Dubrovnik<br><em>na dohvat ruke</em></h2>
-    <p class="reveal reveal-delay-2">Udoban privatni prijevoz unutar Dubrovnika i okolice. Idealno za posjetitelje koji žele slobodu kretanja bez brige o parkingu ili javnom prijevozu.</p>
+    <p class="reveal reveal-delay-2">Udoban privatni prijevoz unutar Dubrovnika i okolice. Idealno za posjetitelje koji žele slobodu kretanja bez brige o parkingu.</p>
     <div class="price-note reveal reveal-delay-2">Prilagodljivo · Po satu ili po vožnji</div>
     <ul class="service-features reveal reveal-delay-3">
       <li>Prijevoz od hotela do Stare Gradske jezgre</li>
@@ -137,20 +123,19 @@
 <!-- SERVICE 3 -->
 <div class="service-block">
   <div class="service-block-img reveal">
-    <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&q=80&auto=format&fit=crop" alt="Međugradski transfer">
+    <img src="https://picsum.photos/id/1082/900/600" alt="Međugradski transfer">
   </div>
   <div class="service-block-content">
     <div class="service-block-num reveal">03</div>
     <div class="section-tag reveal">Međugradski transferi</div>
     <h2 class="reveal reveal-delay-1">Split, Mostar,<br><em>Kotor i dalje</em></h2>
-    <p class="reveal reveal-delay-2">Komforna privatna vožnja između gradova s iskusnim vozačem. Putujte svojim tempom, bez čekanja autobusa ili vlaka. Idealno za grupe i obitelji.</p>
+    <p class="reveal reveal-delay-2">Komforna privatna vožnja između gradova s iskusnim vozačem. Putujte svojim tempom, bez čekanja autobusa ili vlaka.</p>
     <div class="price-note reveal reveal-delay-2">Fiksna cijena · Po dogovoru</div>
     <ul class="service-features reveal reveal-delay-3">
       <li>Dubrovnik — Split (cca 3h)</li>
       <li>Dubrovnik — Mostar (cca 2.5h)</li>
       <li>Dubrovnik — Kotor, Montenegro (cca 2h)</li>
       <li>Dubrovnik — Sarajevo (cca 4h)</li>
-      <li>Prilagodba ruti po želji</li>
     </ul>
     <a href="kontakt.html" class="btn-primary reveal reveal-delay-4">Rezerviraj →</a>
   </div>
@@ -159,13 +144,13 @@
 <!-- SERVICE 4 -->
 <div class="service-block">
   <div class="service-block-img reveal">
-    <img src="https://images.unsplash.com/photo-1436638844003-fc74b29810d5?w=800&q=80&auto=format&fit=crop" alt="Izleti brodom Dubrovnik">
+    <img src="https://picsum.photos/id/1060/900/600" alt="Izleti brodom Dubrovnik">
   </div>
   <div class="service-block-content">
     <div class="service-block-num reveal">04</div>
     <div class="section-tag reveal">Izleti brodom</div>
     <h2 class="reveal reveal-delay-1">Otkrij<br><em>Jadransko more</em></h2>
-    <p class="reveal reveal-delay-2">Privatni izleti brodom po kristalno čistim vodama oko Dubrovnika. Posjetite Elafitske otoke, skrivene uvale i netaknute plaže koje su nedostupne kopnenim putem.</p>
+    <p class="reveal reveal-delay-2">Privatni izleti brodom po kristalno čistim vodama oko Dubrovnika. Posjetite Elafitske otoke i skrivene uvale.</p>
     <div class="price-note reveal reveal-delay-2">Privatni izlet · Po dogovoru</div>
     <ul class="service-features reveal reveal-delay-3">
       <li>Elafitski otoci — Lopud, Šipan, Koločep</li>
@@ -217,9 +202,6 @@
     <p style="font-size:0.75rem;color:var(--muted);">Ulica od Nuncijate, Dubrovnik</p>
   </div>
 </footer>
-
 <script src="main.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="three-bg.js"></script>
 </body>
 </html>
