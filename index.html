@@ -103,34 +103,34 @@
     font-weight: 300;
     line-height: 1.0;
     letter-spacing: -0.01em;
-    color: var(--text);
-    margin-bottom: 2rem;
+    color: #f0ede8;
+    margin-bottom: 1.5rem;
     animation: fadeUp 1s 0.3s both;
   }
-  .hero h1 em { font-style: italic; color: var(--gold); }
-  .hero h1 strong { font-weight: 600; }
+  .hero h1 em { font-style: italic; color: #c9a84c; }
+  .hero h1 strong { font-weight: 600; color: #f0ede8; }
 
   .hero-sub {
-    font-size: 0.95rem; color: var(--muted);
-    max-width: 400px; line-height: 1.85;
-    margin-bottom: 3rem;
+    font-size: 0.95rem; color: rgba(240,237,232,0.7);
+    max-width: 460px; line-height: 1.85;
+    margin-bottom: 2.5rem;
     animation: fadeUp 1s 0.5s both;
   }
   .hero-actions {
     display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;
     animation: fadeUp 1s 0.7s both;
-    margin-top: 2.5rem;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
   }
   .hero-badge {
-    position: absolute; bottom: 3rem; left: 4rem;
-    display: flex; align-items: center; gap: 1.2rem;
+    display: flex; align-items: center; gap: 2rem;
     animation: fadeIn 1s 1s both;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(240,237,232,0.15);
   }
   .hero-badge-item { text-align: left; }
-  .hero-badge-num { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 400; color: var(--text); line-height: 1; }
-  .hero-badge-label { font-size: 0.68rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; }
-  .hero-badge-divider { width: 1px; height: 36px; background: var(--border2); }
+  .hero-badge-num { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; color: #f0ede8; line-height: 1; }
+  .hero-badge-label { font-size: 0.65rem; color: rgba(240,237,232,0.5); letter-spacing: 0.12em; text-transform: uppercase; margin-top: 0.25rem; }
+  .hero-badge-divider { width: 1px; height: 32px; background: rgba(240,237,232,0.15); flex-shrink: 0; }
 
   @keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
   @keyframes fadeIn { from{opacity:0} to{opacity:1} }
