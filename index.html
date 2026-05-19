@@ -44,17 +44,33 @@
     max-width: 700px;
   }
 
-  .hero h1 { color: #f0ede8 !important; }
-  .hero h1 em { color: #c9a84c !important; }
-  .hero h1 strong { color: #f0ede8 !important; }
-  .hero .hero-sub { color: rgba(240,237,232,0.75) !important; }
-  .hero .hero-eyebrow span { color: #c9a84c !important; }
-  .hero .hero-line { background: #c9a84c !important; }
-  .hero .hero-badge-num { color: #f0ede8 !important; }
-  .hero .hero-badge-label { color: rgba(240,237,232,0.6) !important; }
-  .hero .hero-badge-divider { background: rgba(240,237,232,0.2) !important; }
-  .hero .btn-ghost { border-color: rgba(240,237,232,0.3) !important; color: rgba(240,237,232,0.7) !important; }
-  .hero .btn-ghost:hover { border-color: #c9a84c !important; color: #c9a84c !important; }
+  .hero .btn-primary {
+    background: var(--gold) !important;
+    color: #fff !important;
+    padding: 1rem 2.2rem !important;
+    font-size: 0.78rem !important;
+    letter-spacing: 0.14em !important;
+    border: none !important;
+    transition: background 0.2s, box-shadow 0.2s !important;
+  }
+  .hero .btn-primary:hover {
+    background: #b8943f !important;
+    box-shadow: 0 8px 30px rgba(201,168,76,0.4) !important;
+  }
+  .hero .btn-ghost {
+    border: 1px solid rgba(240,237,232,0.4) !important;
+    color: rgba(240,237,232,0.85) !important;
+    padding: 1rem 2rem !important;
+    font-size: 0.78rem !important;
+    letter-spacing: 0.14em !important;
+    backdrop-filter: blur(4px) !important;
+    background: rgba(240,237,232,0.05) !important;
+  }
+  .hero .btn-ghost:hover {
+    border-color: var(--gold) !important;
+    color: var(--gold) !important;
+    background: rgba(201,168,76,0.08) !important;
+  }
 
   /* VIDEO CREDIT */
   .video-credit {
@@ -103,6 +119,8 @@
   .hero-actions {
     display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;
     animation: fadeUp 1s 0.7s both;
+    margin-top: 2.5rem;
+    margin-bottom: 3rem;
   }
   .hero-badge {
     position: absolute; bottom: 3rem; left: 4rem;
