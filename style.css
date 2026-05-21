@@ -80,7 +80,7 @@ body:has(button:hover) .cursor-follower { width: 48px; height: 48px; }
   object-fit: contain;
 }
 @media (max-width: 900px) {
-  .logo-img { height: 58px; }
+  .logo-img { height: 42px; }
 }
 .nav-links { display: flex; list-style: none; align-items: center; }
 .nav-links a {
@@ -278,10 +278,9 @@ footer { background: var(--bg2); border-top: 1px solid var(--border2); }
 
 /* MOBILE */
 @media (max-width: 900px) {
-  #navbar { padding: 0 1.5rem; height: 80px; }
-  .logo-img { height: 65px; }
-  .hamburger { width: 46px; height: 46px; padding: 10px; }
-  .hamburger span { height: 2px; }
+  #navbar { padding: 0 1.5rem; height: 65px; }
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
   section { padding: 5rem 1.5rem; }
   .page-hero { padding: 0 1.5rem 3.5rem; min-height: 50vh; padding-top: 100px; }
   .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; padding: 3rem 1.5rem 2rem; }
