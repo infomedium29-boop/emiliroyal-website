@@ -56,7 +56,7 @@ body:has(button:hover) .cursor-follower { width: 48px; height: 48px; }
   position: fixed; top: 0; left: 0; right: 0;
   z-index: 1000;
   padding: 0 4rem;
-  height: 80px;
+  height: 100px;
   display: flex; align-items: center; justify-content: space-between;
   transition: background 0.4s, border-color 0.4s, box-shadow 0.4s;
   border-bottom: 1px solid transparent;
@@ -75,7 +75,7 @@ body:has(button:hover) .cursor-follower { width: 48px; height: 48px; }
   flex-shrink: 0;
 }
 .logo-img {
-  height: 52px;
+  height: 70px;
   width: auto;
   object-fit: contain;
 }
@@ -86,9 +86,9 @@ body:has(button:hover) .cursor-follower { width: 48px; height: 48px; }
 .nav-links a {
   color: var(--muted);
   text-decoration: none;
-  font-size: 0.78rem;
+  font-size: 0.92rem;
   font-weight: 400;
-  padding: 0.4rem 1rem;
+  padding: 0.4rem 1.1rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   white-space: nowrap;
@@ -112,10 +112,11 @@ body:has(button:hover) .cursor-follower { width: 48px; height: 48px; }
   background: var(--text) !important;
   color: var(--bg) !important;
   font-weight: 500 !important;
-  padding: 0.5rem 1.4rem !important;
+  padding: 0.6rem 1.6rem !important;
   margin-left: 1rem;
   letter-spacing: 0.1em !important;
   transition: background 0.2s !important;
+  font-size: 0.92rem !important;
 }
 .nav-cta::after { display: none !important; }
 .nav-cta:hover { background: var(--gold) !important; color: #fff !important; }
@@ -189,7 +190,7 @@ section { padding: 7rem 4rem; position: relative; }
   justify-content: flex-end; padding: 0 4rem 5rem;
   position: relative; overflow: hidden;
   background: var(--bg2); border-bottom: 1px solid var(--border2);
-  padding-top: 120px;
+  padding-top: 140px;
 }
 .page-hero-line { position: absolute; inset: 0; background-image: linear-gradient(rgba(154,123,60,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(154,123,60,0.05) 1px, transparent 1px); background-size: 60px 60px; mask-image: radial-gradient(ellipse 90% 90% at 20% 80%, black 30%, transparent 100%); }
 .page-hero-tag { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(154,123,60,0.08); border: 1px solid rgba(154,123,60,0.2); color: var(--gold); font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; padding: 0.3rem 0.85rem; margin-bottom: 1.8rem; width: fit-content; font-family: 'DM Sans', sans-serif; }
