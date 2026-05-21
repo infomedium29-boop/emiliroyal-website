@@ -80,7 +80,7 @@ body:has(button:hover) .cursor-follower { width: 48px; height: 48px; }
   object-fit: contain;
 }
 @media (max-width: 900px) {
-  .logo-img { height: 42px; }
+  .logo-img { height: 58px; }
 }
 .nav-links { display: flex; list-style: none; align-items: center; }
 .nav-links a {
@@ -279,6 +279,7 @@ footer { background: var(--bg2); border-top: 1px solid var(--border2); }
 /* MOBILE */
 @media (max-width: 900px) {
   #navbar { padding: 0 1.5rem; height: 65px; }
+  .logo-img { height: 56px; }
   .nav-links { display: none; }
   .hamburger { display: flex; }
   section { padding: 5rem 1.5rem; }
