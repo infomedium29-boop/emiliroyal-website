@@ -81,7 +81,37 @@
     background: rgba(201,168,76,0.08) !important;
   }
 
-  /* SCROLL INDICATOR */
+  /* GOOGLE REVIEWS BADGE */
+  .hero-reviews {
+    display: inline-flex; align-items: center; gap: 0.8rem;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 0.5rem 1.1rem 0.5rem 0.7rem;
+    margin-bottom: 2rem;
+    width: fit-content;
+    animation: fadeUp 1s 0.1s both;
+  }
+  .hero-reviews-stars { display:flex; gap:2px; }
+  .hero-reviews-stars span { color: #f5c518; font-size: 0.75rem; }
+  .hero-reviews-text { font-size: 0.72rem; color: rgba(240,237,232,0.85); letter-spacing: 0.05em; font-family: 'DM Sans', sans-serif; }
+  .hero-reviews-text strong { color: #f0ede8; font-weight: 600; }
+  .google-icon { width: 18px; height: 18px; flex-shrink: 0; }
+
+  /* WHY US SECTION */
+  .why-section { background: var(--bg2); border-top: 1px solid var(--border2); }
+  .why-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--border2); border: 1px solid var(--border2); margin-top: 3.5rem; }
+  .why-card { background: var(--bg2); padding: 2.5rem 2rem; text-align: center; transition: background 0.3s; cursor: none; }
+  .why-card:hover { background: var(--bg3); }
+  .why-card-num { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 300; color: var(--gold); line-height: 1; margin-bottom: 0.5rem; }
+  .why-card-title { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 400; margin-bottom: 0.6rem; color: var(--text); }
+  .why-card-text { font-size: 0.82rem; color: var(--muted); line-height: 1.65; }
+  .why-card-icon { font-size: 1.5rem; margin-bottom: 1rem; display: block; }
+
+  @media (max-width:900px) {
+    .why-grid { grid-template-columns: 1fr 1fr; }
+    .hero-reviews { margin-bottom: 1.5rem; }
+  }
   .hero-scroll {
     position: absolute; bottom: 2.5rem; left: 50%;
     transform: translateX(-50%);
@@ -274,6 +304,21 @@
       <div class="hero-line"></div>
       <span>Privatni transfer · Dubrovnik</span>
     </div>
+
+    <!-- GOOGLE REVIEWS BADGE -->
+    <div class="hero-reviews">
+      <svg class="google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+        <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+        <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+        <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+      </svg>
+      <div class="hero-reviews-stars">
+        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+      </div>
+      <div class="hero-reviews-text"><strong>5.0</strong> · 50+ Google recenzija</div>
+    </div>
+
     <h1>
       Putujte u<br>
       <em>kraljevskom</em><br>
@@ -301,6 +346,11 @@
       <div class="hero-badge-item">
         <div class="hero-badge-num">4.9★</div>
         <div class="hero-badge-label">Ocjena gostiju</div>
+      </div>
+      <div class="hero-badge-divider"></div>
+      <div class="hero-badge-item">
+        <div class="hero-badge-num">100%</div>
+        <div class="hero-badge-label">Zadovoljnih klijenata</div>
       </div>
     </div>
   </div>
@@ -333,6 +383,38 @@
     <span class="marquee-item"><span class="marquee-dot"></span>Dostupni 0-24</span>
   </div>
 </div>
+
+<!-- WHY US -->
+<section class="why-section">
+  <div class="section-tag reveal">Zašto mi</div>
+  <h2 class="section-title reveal reveal-delay-1">Postavljamo standard<br>luksuznog <em>prijevoza</em></h2>
+  <div class="why-grid">
+    <div class="why-card reveal">
+      <span class="why-card-icon">🚗</span>
+      <div class="why-card-num">10+</div>
+      <div class="why-card-title">Premium vozila</div>
+      <div class="why-card-text">Pažljivo odabrana luksuzna vozila za maksimalnu udobnost na svakom putovanju.</div>
+    </div>
+    <div class="why-card reveal reveal-delay-1">
+      <span class="why-card-icon">⭐</span>
+      <div class="why-card-num">10+</div>
+      <div class="why-card-title">Godine iskustva</div>
+      <div class="why-card-text">Više od desetljeća pouzdanog prijevoza turista i poslovnih putnika u Dubrovniku.</div>
+    </div>
+    <div class="why-card reveal reveal-delay-2">
+      <span class="why-card-icon">🎩</span>
+      <div class="why-card-num">100%</div>
+      <div class="why-card-title">Profesionalni vozači</div>
+      <div class="why-card-text">Iskusni, uredni i ljubazni vozači koji govore engleski, talijanski i hrvatski.</div>
+    </div>
+    <div class="why-card reveal reveal-delay-3">
+      <span class="why-card-icon">🕐</span>
+      <div class="why-card-num">24/7</div>
+      <div class="why-card-title">Uvijek dostupni</div>
+      <div class="why-card-text">Rezervacija i podrška 24 sata dnevno, 365 dana u godini. Bez iznimke.</div>
+    </div>
+  </div>
+</section>
 
 <!-- SERVICES -->
 <section class="services">
