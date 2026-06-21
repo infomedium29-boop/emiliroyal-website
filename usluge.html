@@ -1,14 +1,18 @@
 <!DOCTYPE html>
+
 <html lang="hr">
 <head>
-<meta charset="UTF-8">
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="apple-touch-icon" href="favicon.png">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<link href="favicon.png" rel="icon" type="image/png"/>
+<link href="favicon.png" rel="apple-touch-icon"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Usluge — Emili Royal Transfers Dubrovnik</title>
-<meta name="description" content="Privatni airport transfer, gradski prijevoz, međugradski transferi i izleti brodom u Dubrovniku. Fiksne cijene, dostupnost 0-24.">
-<link rel="stylesheet" href="style.css">
+<meta content="Privatni airport transfer, gradski prijevoz, međugradski transferi i izleti brodom u Dubrovniku. Fiksne cijene, dostupnost 0-24." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&amp;family=DM+Sans:wght@300;400;500&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&amp;family=DM+Sans:wght@300;400;500&amp;display=swap" rel="stylesheet"/></noscript>
+<link href="style.css" rel="stylesheet"/>
 <style>
   .service-block {
     padding: 6rem 4rem;
@@ -48,166 +52,158 @@
 <body>
 <div class="cursor" id="cursor"></div>
 <div class="cursor-follower" id="cursorFollower"></div>
-
 <nav id="navbar">
-  <a href="index.html" class="logo-wrap"><img src="logo.png" alt="Emili Royal Transfers" class="logo-img"></a>
-  <ul class="nav-links">
-    <li><a href="index.html">Početna</a></li>
-    <li><a href="usluge.html">Usluge</a></li>
-    <li><a href="destinacije.html">Destinacije</a></li>
-    <li><a href="o-nama.html">O nama</a></li>
-    <li><a href="kontakt.html" class="nav-cta">Rezerviraj</a></li>
-  </ul>
-  <button class="hamburger" id="hamburger" aria-label="Otvori meni">
-    <span></span><span></span><span></span>
-  </button>
+<a class="logo-wrap" href="index.html"><img alt="Emili Royal Transfers" class="logo-img" height="499" src="logo.png" width="500"/></a>
+<ul class="nav-links">
+<li><a href="index.html">Početna</a></li>
+<li><a href="usluge.html">Usluge</a></li>
+<li><a href="destinacije.html">Destinacije</a></li>
+<li><a href="o-nama.html">O nama</a></li>
+<li><a class="nav-cta" href="kontakt.html">Rezerviraj</a></li>
+</ul>
+<button aria-label="Otvori meni" class="hamburger" id="hamburger">
+<span></span><span></span><span></span>
+</button>
 </nav>
-
 <div class="mobile-menu" id="mobileMenu">
-  <ul class="mobile-menu-links">
-    <li><a href="index.html">Početna</a></li>
-    <li><a href="usluge.html">Usluge</a></li>
-    <li><a href="destinacije.html">Destinacije</a></li>
-    <li><a href="o-nama.html">O nama</a></li>
-    <li><a href="kontakt.html">Kontakt</a></li>
-  </ul>
-  <div class="mobile-menu-cta"><a href="kontakt.html">Rezerviraj</a></div>
+<ul class="mobile-menu-links">
+<li><a href="index.html">Početna</a></li>
+<li><a href="usluge.html">Usluge</a></li>
+<li><a href="destinacije.html">Destinacije</a></li>
+<li><a href="o-nama.html">O nama</a></li>
+<li><a href="kontakt.html">Kontakt</a></li>
+</ul>
+<div class="mobile-menu-cta"><a href="kontakt.html">Rezerviraj</a></div>
 </div>
-
-<div class="page-hero page-hero--img" style="background-image: url('cesta.jpg');">
-  <div class="page-hero-overlay"></div>
-  <div class="page-hero-line"></div>
-  <div class="page-hero-tag">Naše usluge</div>
-  <h1>Sve što trebate<br>za <em>savršeno</em> putovanje</h1>
-  <p class="page-hero-sub">Od dolaska na aerodrom do ekskluzivnih izleta — pokrivamo sve vaše prijevozne potrebe u Dubrovniku i okolici.</p>
+<div class="page-hero page-hero--img" style="background-image: url('cesta.avif');">
+<div class="page-hero-overlay"></div>
+<div class="page-hero-line"></div>
+<div class="page-hero-tag">Naše usluge</div>
+<h1>Sve što trebate<br/>za <em>savršeno</em> putovanje</h1>
+<p class="page-hero-sub">Od dolaska na aerodrom do ekskluzivnih izleta — pokrivamo sve vaše prijevozne potrebe u Dubrovniku i okolici.</p>
 </div>
-
 <!-- SERVICE 1 -->
 <div class="service-block">
-  <div class="service-block-img reveal">
-    <img src="airport.jpg" alt="Airport transfer Dubrovnik">
-  </div>
-  <div class="service-block-content">
-    <div class="service-block-num reveal">01</div>
-    <div class="section-tag reveal">Airport Transfer</div>
-    <h2 class="reveal reveal-delay-1">Prijevoz do<br><em>zračne luke</em></h2>
-    <p class="reveal reveal-delay-2">Nikad više stresa zbog kasnjenja ili propuštenog leta. Pratimo vaš let i čekamo vas bez obzira na promjene rasporeda.</p>
-    <div class="price-note reveal reveal-delay-2">Fiksna cijena · Bez skrivenih troškova</div>
-    <ul class="service-features reveal reveal-delay-3">
-      <li>Praćenje leta u realnom vremenu</li>
-      <li>Dočekamo vas s tablom s imenom</li>
-      <li>Pomoć s prtljagom uključena</li>
-      <li>Klimatizirano vozilo</li>
-      <li>Dostupno 0-24, svaki dan</li>
-    </ul>
-    <a href="kontakt.html" class="btn-primary reveal reveal-delay-4">Rezerviraj transfer →</a>
-  </div>
+<div class="service-block-img reveal">
+<img alt="Airport transfer Dubrovnik" decoding="async" height="998" loading="lazy" src="airport.avif" width="1600"/>
 </div>
-
+<div class="service-block-content">
+<div class="service-block-num reveal">01</div>
+<div class="section-tag reveal">Airport Transfer</div>
+<h2 class="reveal reveal-delay-1">Prijevoz do<br/><em>zračne luke</em></h2>
+<p class="reveal reveal-delay-2">Nikad više stresa zbog kasnjenja ili propuštenog leta. Pratimo vaš let i čekamo vas bez obzira na promjene rasporeda.</p>
+<div class="price-note reveal reveal-delay-2">Fiksna cijena · Bez skrivenih troškova</div>
+<ul class="service-features reveal reveal-delay-3">
+<li>Praćenje leta u realnom vremenu</li>
+<li>Dočekamo vas s tablom s imenom</li>
+<li>Pomoć s prtljagom uključena</li>
+<li>Klimatizirano vozilo</li>
+<li>Dostupno 0-24, svaki dan</li>
+</ul>
+<a class="btn-primary reveal reveal-delay-4" href="kontakt.html">Rezerviraj transfer →</a>
+</div>
+</div>
 <!-- SERVICE 2 -->
 <div class="service-block">
-  <div class="service-block-img reveal">
-    <img src="grad.jpg" alt="Gradski prijevoz Dubrovnik">
-  </div>
-  <div class="service-block-content">
-    <div class="service-block-num reveal">02</div>
-    <div class="section-tag reveal">Gradski prijevoz</div>
-    <h2 class="reveal reveal-delay-1">Dubrovnik<br><em>na dohvat ruke</em></h2>
-    <p class="reveal reveal-delay-2">Udoban privatni prijevoz unutar Dubrovnika i okolice. Idealno za posjetitelje koji žele slobodu kretanja bez brige o parkingu.</p>
-    <div class="price-note reveal reveal-delay-2">Prilagodljivo · Po satu ili po vožnji</div>
-    <ul class="service-features reveal reveal-delay-3">
-      <li>Prijevoz od hotela do Stare Gradske jezgre</li>
-      <li>Obilazak znamenitosti</li>
-      <li>Privatno vozilo za cijeli dan</li>
-      <li>Fleksibilan raspored</li>
-    </ul>
-    <a href="kontakt.html" class="btn-primary reveal reveal-delay-4">Rezerviraj →</a>
-  </div>
+<div class="service-block-img reveal">
+<img alt="Gradski prijevoz Dubrovnik" decoding="async" height="1200" loading="lazy" src="grad.avif" width="1600"/>
 </div>
-
+<div class="service-block-content">
+<div class="service-block-num reveal">02</div>
+<div class="section-tag reveal">Gradski prijevoz</div>
+<h2 class="reveal reveal-delay-1">Dubrovnik<br/><em>na dohvat ruke</em></h2>
+<p class="reveal reveal-delay-2">Udoban privatni prijevoz unutar Dubrovnika i okolice. Idealno za posjetitelje koji žele slobodu kretanja bez brige o parkingu.</p>
+<div class="price-note reveal reveal-delay-2">Prilagodljivo · Po satu ili po vožnji</div>
+<ul class="service-features reveal reveal-delay-3">
+<li>Prijevoz od hotela do Stare Gradske jezgre</li>
+<li>Obilazak znamenitosti</li>
+<li>Privatno vozilo za cijeli dan</li>
+<li>Fleksibilan raspored</li>
+</ul>
+<a class="btn-primary reveal reveal-delay-4" href="kontakt.html">Rezerviraj →</a>
+</div>
+</div>
 <!-- SERVICE 3 -->
 <div class="service-block">
-  <div class="service-block-img reveal">
-    <img src="cesta.jpg" alt="Međugradski transfer">
-  </div>
-  <div class="service-block-content">
-    <div class="service-block-num reveal">03</div>
-    <div class="section-tag reveal">Međugradski transferi</div>
-    <h2 class="reveal reveal-delay-1">Split, Mostar,<br><em>Kotor i dalje</em></h2>
-    <p class="reveal reveal-delay-2">Komforna privatna vožnja između gradova s iskusnim vozačem. Putujte svojim tempom, bez čekanja autobusa ili vlaka.</p>
-    <div class="price-note reveal reveal-delay-2">Fiksna cijena · Po dogovoru</div>
-    <ul class="service-features reveal reveal-delay-3">
-      <li>Dubrovnik — Split (cca 3h)</li>
-      <li>Dubrovnik — Mostar (cca 2.5h)</li>
-      <li>Dubrovnik — Kotor, Montenegro (cca 2h)</li>
-      <li>Dubrovnik — Sarajevo (cca 4h)</li>
-    </ul>
-    <a href="kontakt.html" class="btn-primary reveal reveal-delay-4">Rezerviraj →</a>
-  </div>
+<div class="service-block-img reveal">
+<img alt="Međugradski transfer" decoding="async" height="1067" loading="lazy" src="cesta.avif" width="1600"/>
 </div>
-
+<div class="service-block-content">
+<div class="service-block-num reveal">03</div>
+<div class="section-tag reveal">Međugradski transferi</div>
+<h2 class="reveal reveal-delay-1">Split, Mostar,<br/><em>Kotor i dalje</em></h2>
+<p class="reveal reveal-delay-2">Komforna privatna vožnja između gradova s iskusnim vozačem. Putujte svojim tempom, bez čekanja autobusa ili vlaka.</p>
+<div class="price-note reveal reveal-delay-2">Fiksna cijena · Po dogovoru</div>
+<ul class="service-features reveal reveal-delay-3">
+<li>Dubrovnik — Split (cca 3h)</li>
+<li>Dubrovnik — Mostar (cca 2.5h)</li>
+<li>Dubrovnik — Kotor, Montenegro (cca 2h)</li>
+<li>Dubrovnik — Sarajevo (cca 4h)</li>
+</ul>
+<a class="btn-primary reveal reveal-delay-4" href="kontakt.html">Rezerviraj →</a>
+</div>
+</div>
 <!-- SERVICE 4 -->
 <div class="service-block">
-  <div class="service-block-img reveal">
-    <img src="more.jpg" alt="Izleti brodom Dubrovnik">
-  </div>
-  <div class="service-block-content">
-    <div class="service-block-num reveal">04</div>
-    <div class="section-tag reveal">Izleti brodom</div>
-    <h2 class="reveal reveal-delay-1">Otkrij<br><em>Jadransko more</em></h2>
-    <p class="reveal reveal-delay-2">Privatni izleti brodom po kristalno čistim vodama oko Dubrovnika. Posjetite Elafitske otoke i skrivene uvale.</p>
-    <div class="price-note reveal reveal-delay-2">Privatni izlet · Po dogovoru</div>
-    <ul class="service-features reveal reveal-delay-3">
-      <li>Elafitski otoci — Lopud, Šipan, Koločep</li>
-      <li>Skrivene uvale i plaže</li>
-      <li>Prilagođen raspored</li>
-      <li>Piće i grickalice po dogovoru</li>
-    </ul>
-    <a href="kontakt.html" class="btn-primary reveal reveal-delay-4">Rezerviraj izlet →</a>
-  </div>
+<div class="service-block-img reveal">
+<img alt="Izleti brodom Dubrovnik" decoding="async" height="1067" loading="lazy" src="more.avif" width="1600"/>
 </div>
-
+<div class="service-block-content">
+<div class="service-block-num reveal">04</div>
+<div class="section-tag reveal">Izleti brodom</div>
+<h2 class="reveal reveal-delay-1">Otkrij<br/><em>Jadransko more</em></h2>
+<p class="reveal reveal-delay-2">Privatni izleti brodom po kristalno čistim vodama oko Dubrovnika. Posjetite Elafitske otoke i skrivene uvale.</p>
+<div class="price-note reveal reveal-delay-2">Privatni izlet · Po dogovoru</div>
+<ul class="service-features reveal reveal-delay-3">
+<li>Elafitski otoci — Lopud, Šipan, Koločep</li>
+<li>Skrivene uvale i plaže</li>
+<li>Prilagođen raspored</li>
+<li>Piće i grickalice po dogovoru</li>
+</ul>
+<a class="btn-primary reveal reveal-delay-4" href="kontakt.html">Rezerviraj izlet →</a>
+</div>
+</div>
 <!-- FOOTER -->
 <footer>
-  <div class="footer-top">
-    <div class="footer-brand">
-      <a href="index.html" class="logo-wrap"><img src="logo.png" alt="Emili Royal Transfers" class="logo-img"></a>
-      <p>Sigurno, udobno i pouzdano do vašeg odredišta. Dostupni 0-24, 365 dana u godini.</p>
-    </div>
-    <div class="footer-col">
-      <h4>Stranice</h4>
-      <ul>
-        <li><a href="index.html">Početna</a></li>
-        <li><a href="usluge.html">Usluge</a></li>
-        <li><a href="destinacije.html">Destinacije</a></li>
-        <li><a href="o-nama.html">O nama</a></li>
-        <li><a href="kontakt.html">Kontakt</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Usluge</h4>
-      <ul>
-        <li><a href="usluge.html">Airport transfer</a></li>
-        <li><a href="usluge.html">Gradski prijevoz</a></li>
-        <li><a href="usluge.html">Međugradski transfer</a></li>
-        <li><a href="destinacije.html">Destinacije i izleti</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Kontakt</h4>
-      <ul>
-        <li><a href="https://wa.me/385913240003">+385 91 3240003</a></li>
-        <li><a href="mailto:miran10021994@gmail.com">miran10021994@gmail.com</a></li>
-        <li><a href="#">Dubrovnik, Hrvatska</a></li>
-        <li><a href="#">Dostupni 0-24</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>© 2026 Emili Royal Transfers. Sva prava pridržana.</p>
-    <p style="font-size:0.75rem;color:var(--muted);">Ulica od Nuncijate, Dubrovnik</p>
-  </div>
+<div class="footer-top">
+<div class="footer-brand">
+<a class="logo-wrap" href="index.html"><img alt="Emili Royal Transfers" class="logo-img" height="499" src="logo.png" width="500"/></a>
+<p>Sigurno, udobno i pouzdano do vašeg odredišta. Dostupni 0-24, 365 dana u godini.</p>
+</div>
+<div class="footer-col">
+<h4>Stranice</h4>
+<ul>
+<li><a href="index.html">Početna</a></li>
+<li><a href="usluge.html">Usluge</a></li>
+<li><a href="destinacije.html">Destinacije</a></li>
+<li><a href="o-nama.html">O nama</a></li>
+<li><a href="kontakt.html">Kontakt</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Usluge</h4>
+<ul>
+<li><a href="usluge.html">Airport transfer</a></li>
+<li><a href="usluge.html">Gradski prijevoz</a></li>
+<li><a href="usluge.html">Međugradski transfer</a></li>
+<li><a href="destinacije.html">Destinacije i izleti</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Kontakt</h4>
+<ul>
+<li><a href="https://wa.me/385913240003">+385 91 3240003</a></li>
+<li><a href="mailto:miran10021994@gmail.com">miran10021994@gmail.com</a></li>
+<li><a href="#">Dubrovnik, Hrvatska</a></li>
+<li><a href="#">Dostupni 0-24</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2026 Emili Royal Transfers. Sva prava pridržana.</p>
+<p style="font-size:0.75rem;color:var(--muted);">Ulica od Nuncijate, Dubrovnik</p>
+</div>
 </footer>
-<script src="main.js"></script>
+<script defer="" src="main.js"></script>
 </body>
 </html>
