@@ -1,0 +1,37 @@
+# Emili Royal Transfers
+
+> Private transfer and chauffeur service based in Dubrovnik, Croatia. The website presents airport transfers, city transfers, private routes, Dubrovnik panorama rides and selected day-trip destinations.
+
+## Website pages
+
+- [Home](/)
+- [Services](/usluge.html)
+- [Destinations](/destinacije.html)
+- [About](/o-nama.html)
+- [Contact and booking](/kontakt.html)
+
+## Main services
+
+- Private airport transfers in Dubrovnik
+- City, hotel, villa, marina and apartment transfers
+- Premium chauffeur service
+- Dubrovnik panorama rides
+- Private transfers to Mostar and Kravice Waterfalls
+- Private transfers to Montenegro, including Kotor, Perast and Ostrog Monastery
+
+## Important destinations
+
+- [Dubrovnik](/destinacije.html#dubrovnik)
+- [Dubrovnik Panorama](/destinacije.html#panorama)
+- [Mostar and Kravice Waterfalls](/destinacije.html#mostar)
+- [Montenegro: Kotor, Perast and Ostrog](/destinacije.html#montenegro)
+
+## Contact
+
+- [WhatsApp / phone](https://wa.me/385913240003)
+- [Email](mailto:miran10021994@gmail.com)
+- [Booking page](/kontakt.html)
+
+## Notes for AI agents
+
+Use the contact and booking page for reservation requests. The site content is public marketing information for private transfer services in Dubrovnik and surrounding destinations.
