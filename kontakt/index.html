@@ -44,6 +44,9 @@
   .form-submit { background:var(--text); color:var(--bg); font-family:'DM Sans',sans-serif; font-weight:500; font-size:0.78rem; letter-spacing:0.14em; text-transform:uppercase; padding:1rem 2rem; border:none; cursor:none; display:flex; align-items:center; justify-content:center; gap:0.5rem; transition:background 0.2s; margin-top:0.5rem; width:100%; }
   .form-submit:hover { background:var(--gold); }
   .form-note { font-size:0.75rem; color:var(--muted); text-align:center; margin-top:0.5rem; }
+  .form-status { min-height:1.2em; margin:0.15rem 0 0; text-align:center; font-size:0.78rem; color:var(--muted); }
+  .form-status.is-error { color:#a64242; }
+  .form-submit:disabled { cursor:not-allowed; }
 
   .form-success { display:none; text-align:center; padding:3rem 1rem; }
   .form-success.show { display:block; }
@@ -148,19 +151,20 @@
       <div class="contact-form-wrap">
         <h3>Pošaljite upit</h3>
         <p>Ispunite obrazac i javit ćemo se u najkraćem mogućem roku.</p>
-        <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
+        <form class="contact-form" id="contactForm" novalidate>
+          <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
           <div class="form-row">
-            <div class="form-group"><label>Ime i prezime *</label><input type="text" placeholder="Vaše ime" required></div>
-            <div class="form-group"><label>Email *</label><input type="email" placeholder="vas@email.com" required></div>
+            <div class="form-group"><label for="contactName">Ime i prezime *</label><input id="contactName" type="text" name="name" placeholder="Vaše ime" autocomplete="name" maxlength="100" required></div>
+            <div class="form-group"><label for="contactEmail">Email *</label><input id="contactEmail" type="email" name="email" placeholder="vas@email.com" autocomplete="email" maxlength="160" required></div>
           </div>
           <div class="form-row">
-            <div class="form-group"><label>Telefon / WhatsApp</label><input type="tel" placeholder="+385 ..."></div>
-            <div class="form-group"><label>Broj putnika</label>
-              <select><option>1 putnik</option><option>2 putnika</option><option>3-4 putnika</option><option>5-6 putnika</option><option>7+ putnika</option></select>
+            <div class="form-group"><label for="contactPhone">Telefon / WhatsApp</label><input id="contactPhone" type="tel" name="phone" placeholder="+385 ..." autocomplete="tel" maxlength="50"></div>
+            <div class="form-group"><label for="contactPassengers">Broj putnika</label>
+              <select id="contactPassengers" name="passengers"><option>1 putnik</option><option>2 putnika</option><option>3-4 putnika</option><option>5-6 putnika</option><option>7+ putnika</option></select>
             </div>
           </div>
-          <div class="form-group"><label>Vrsta usluge *</label>
-            <select required>
+          <div class="form-group"><label for="contactService">Vrsta usluge *</label>
+            <select id="contactService" name="service" required>
               <option value="">Odaberite uslugu</option>
               <option>Prijevoz do/od zračne luke</option>
               <option>Gradski prijevoz — Dubrovnik</option>
@@ -170,15 +174,16 @@
             </select>
           </div>
           <div class="form-row">
-            <div class="form-group"><label>Datum putovanja</label><input type="date"></div>
-            <div class="form-group"><label>Željeno vrijeme</label><input type="time"></div>
+            <div class="form-group"><label for="contactDate">Datum putovanja</label><input id="contactDate" type="date" name="travel_date"></div>
+            <div class="form-group"><label for="contactTime">Željeno vrijeme</label><input id="contactTime" type="time" name="travel_time"></div>
           </div>
-          <div class="form-group"><label>Poruka / Detalji rute</label><textarea placeholder="Opišite rutu, posebne zahtjeve ili pitanja..."></textarea></div>
+          <div class="form-group"><label for="contactMessage">Poruka / Detalji rute</label><textarea id="contactMessage" name="message" maxlength="3000" placeholder="Opišite rutu, posebne zahtjeve ili pitanja..."></textarea></div>
           <button type="submit" class="form-submit" id="submitBtn">
-            Pošalji rezervaciju
+            <span id="submitBtnText">Pošalji rezervaciju</span>
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 8h12M10 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
           <p class="form-note">* Obavezna polja · Podaci su sigurni</p>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
         </form>
         <div class="form-success" id="formSuccess">
           <div class="gold-icon">✦</div>
@@ -245,16 +250,59 @@
 </footer>
 <script src="/main.js"></script>
 <script>
-function handleSubmit(e) {
-  e.preventDefault();
-  var btn = document.getElementById('submitBtn');
-  btn.textContent = 'Šaljem...';
-  btn.style.opacity = '0.7';
-  setTimeout(function() {
-    document.getElementById('contactForm').style.display = 'none';
-    document.getElementById('formSuccess').classList.add('show');
-  }, 1000);
-}
+(function () {
+  const form = document.getElementById('contactForm');
+  const btn = document.getElementById('submitBtn');
+  const btnText = document.getElementById('submitBtnText');
+  const status = document.getElementById('formStatus');
+  const success = document.getElementById('formSuccess');
+
+  if (!form) return;
+
+  form.addEventListener('submit', async function (event) {
+    event.preventDefault();
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    btn.disabled = true;
+    btn.style.opacity = '0.7';
+    btnText.textContent = 'Šaljem...';
+    status.textContent = '';
+    status.classList.remove('is-error');
+
+    const data = Object.fromEntries(new FormData(form).entries());
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(data)
+      });
+
+      const result = await response.json().catch(function () { return {}; });
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || 'Slanje trenutno nije uspjelo.');
+      }
+
+      form.reset();
+      form.style.display = 'none';
+      success.classList.add('show');
+    } catch (error) {
+      status.textContent = 'Upit nije poslan. Pokušajte ponovno ili nas kontaktirajte putem WhatsAppa.';
+      status.classList.add('is-error');
+      btn.disabled = false;
+      btn.style.opacity = '1';
+      btnText.textContent = 'Pošalji rezervaciju';
+    }
+  });
+})();
 </script>
 </body>
 </html>
