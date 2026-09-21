@@ -190,7 +190,9 @@
     border-bottom: 1px solid var(--border2);
     cursor: none; transition: padding-left 0.3s, background 0.3s;
     position: relative;
+    text-decoration: none; color: inherit;
   }
+  .service-row:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
   .service-row:first-child { border-top: 1px solid var(--border2); }
   .service-row:hover { padding-left: 1rem; }
   .service-row-num { font-family: 'Cormorant Garamond', serif; font-size: 0.9rem; color: var(--gold); letter-spacing: 0.1em; }
@@ -321,7 +323,7 @@
       <div class="hero-reviews-stars">
         <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
       </div>
-      <div class="hero-reviews-text"><strong>5.0</strong> · 50+ Google recenzija</div>
+      <div class="hero-reviews-text"><strong>4,9</strong> · 50+ Google recenzija</div>
     </div>
 
     <h1>
@@ -349,7 +351,7 @@
       </div>
       <div class="hero-badge-divider"></div>
       <div class="hero-badge-item">
-        <div class="hero-badge-num">4.9★</div>
+        <div class="hero-badge-num">4,9★</div>
         <div class="hero-badge-label">Ocjena gostiju</div>
       </div>
       <div class="hero-badge-divider"></div>
@@ -431,30 +433,30 @@
     <a href="/usluge" class="btn-ghost reveal reveal-delay-2">Sve usluge →</a>
   </div>
   <div class="services-list">
-    <div class="service-row reveal">
+    <a href="/usluge#airport-transfer" class="service-row reveal" aria-label="Saznajte više o prijevozu do zračne luke">
       <div class="service-row-num">01</div>
       <h3>Prijevoz do zračne luke</h3>
       <p>Pratimo vaš let i čekamo vas bez obzira na promjene rasporeda. Dočekujemo s tablom s imenom.</p>
-      <div class="service-row-arrow">→</div>
-    </div>
-    <div class="service-row reveal reveal-delay-1">
+      <div class="service-row-arrow" aria-hidden="true">→</div>
+    </a>
+    <a href="/usluge#city-transfer" class="service-row reveal reveal-delay-1" aria-label="Saznajte više o gradskom prijevozu">
       <div class="service-row-num">02</div>
       <h3>Gradski prijevoz</h3>
       <p>Udoban privatni prijevoz unutar Dubrovnika i okolice. Idealno za posjetitelje.</p>
-      <div class="service-row-arrow">→</div>
-    </div>
-    <div class="service-row reveal reveal-delay-2">
+      <div class="service-row-arrow" aria-hidden="true">→</div>
+    </a>
+    <a href="/usluge#intercity-transfer" class="service-row reveal reveal-delay-2" aria-label="Saznajte više o međugradskim transferima">
       <div class="service-row-num">03</div>
       <h3>Međugradski transferi</h3>
       <p>Split, Mostar, Kotor i dalje — privatna vožnja vašim tempom i rasporedom.</p>
-      <div class="service-row-arrow">→</div>
-    </div>
-    <div class="service-row reveal reveal-delay-3">
+      <div class="service-row-arrow" aria-hidden="true">→</div>
+    </a>
+    <a href="/usluge#boat-trips" class="service-row reveal reveal-delay-3" aria-label="Saznajte više o izletima brodom">
       <div class="service-row-num">04</div>
       <h3>Izleti brodom</h3>
       <p>Elafitski otoci, skrivene uvale i netaknute plaže oko Dubrovnika.</p>
-      <div class="service-row-arrow">→</div>
-    </div>
+      <div class="service-row-arrow" aria-hidden="true">→</div>
+    </a>
   </div>
 </section>
 

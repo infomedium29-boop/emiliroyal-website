@@ -17,9 +17,10 @@
   .contact-layout { display:grid; grid-template-columns:1fr 1.3fr; gap:5rem; align-items:start; }
 
   .contact-methods { display:flex; flex-direction:column; gap:0; margin-top:2.5rem; }
-  .contact-method { display:flex; gap:1.2rem; align-items:flex-start; padding:1.5rem 0; border-bottom:1px solid var(--border2); transition:padding-left 0.3s; cursor:none; }
+  .contact-method { display:flex; gap:1.2rem; align-items:flex-start; padding:1.5rem 0; border-bottom:1px solid var(--border2); transition:padding-left 0.3s, color 0.2s; cursor:none; text-decoration:none; color:inherit; }
   .contact-method:first-child { border-top:1px solid var(--border2); }
   .contact-method:hover { padding-left:0.5rem; }
+  a.contact-method:focus-visible { outline:2px solid var(--gold); outline-offset:4px; }
   .contact-method-icon { width:40px; height:40px; border:1px solid rgba(154,123,60,0.25); display:flex; align-items:center; justify-content:center; font-size:0.95rem; flex-shrink:0; color:var(--gold); transition:box-shadow 0.3s; }
   .contact-method:hover .contact-method-icon { box-shadow:0 4px 20px rgba(154,123,60,0.12); }
   .contact-method-label { font-size:0.68rem; font-weight:400; letter-spacing:0.15em; text-transform:uppercase; color:var(--muted); margin-bottom:0.2rem; }
@@ -28,30 +29,31 @@
 
   .contact-form-wrap { background:var(--bg2); border:1px solid var(--border2); padding:3rem; position:relative; overflow:hidden; }
   .contact-form-wrap h3 { font-family:'Cormorant Garamond',serif; font-size:1.6rem; font-weight:400; margin-bottom:0.4rem; }
-  .contact-form-wrap > p { font-size:0.85rem; color:var(--muted); margin-bottom:2rem; }
+  .contact-form-wrap > p { font-size:0.95rem; color:var(--text2); line-height:1.7; margin-bottom:2rem; }
   .contact-form { display:flex; flex-direction:column; gap:1rem; }
   .form-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
   .form-group { display:flex; flex-direction:column; gap:0.4rem; }
-  .form-group label { font-size:0.68rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--muted); font-family:'DM Sans',sans-serif; }
+  .form-group label { font-size:0.78rem; font-weight:500; letter-spacing:0.11em; text-transform:uppercase; color:var(--text2); font-family:'DM Sans',sans-serif; }
   .form-group input, .form-group textarea, .form-group select {
-    background:var(--bg); border:1px solid var(--border2); color:var(--text);
-    font-family:'DM Sans',sans-serif; font-size:0.9rem; padding:0.85rem 1rem;
-    border-radius:0; outline:none; transition:border-color 0.2s; cursor:none; width:100%;
+    background:#fffdf9; border:1px solid rgba(26,24,18,0.18); color:var(--text);
+    font-family:'DM Sans',sans-serif; font-size:0.98rem; padding:0.95rem 1rem; min-height:50px;
+    border-radius:0; outline:none; transition:border-color 0.2s, box-shadow 0.2s, background 0.2s; cursor:none; width:100%;
   }
-  .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color:rgba(154,123,60,0.5); }
+  .form-group input::placeholder, .form-group textarea::placeholder { color:#6f675a; opacity:0.82; }
+  .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color:rgba(154,123,60,0.75); box-shadow:0 0 0 3px rgba(154,123,60,0.09); background:#fff; }
   .form-group textarea { resize:vertical; min-height:120px; }
   .form-group select option { background:var(--bg2); }
   .form-submit { background:var(--text); color:var(--bg); font-family:'DM Sans',sans-serif; font-weight:500; font-size:0.78rem; letter-spacing:0.14em; text-transform:uppercase; padding:1rem 2rem; border:none; cursor:none; display:flex; align-items:center; justify-content:center; gap:0.5rem; transition:background 0.2s; margin-top:0.5rem; width:100%; }
   .form-submit:hover { background:var(--gold); }
-  .form-note { font-size:0.75rem; color:var(--muted); text-align:center; margin-top:0.5rem; }
-  .form-status { min-height:1.2em; margin:0.15rem 0 0; text-align:center; font-size:0.78rem; color:var(--muted); }
+  .form-note { font-size:0.82rem; color:var(--text2); text-align:center; margin-top:0.55rem; }
+  .form-status { min-height:1.2em; margin:0.2rem 0 0; text-align:center; font-size:0.86rem; color:var(--text2); }
   .form-status.is-error { color:#a64242; }
   .form-submit:disabled { cursor:not-allowed; }
 
   .form-success { display:none; text-align:center; padding:3rem 1rem; }
   .form-success.show { display:block; }
   .form-success h3 { font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:400; margin-bottom:0.5rem; }
-  .form-success p { color:var(--muted); font-size:0.9rem; }
+  .form-success p { color:var(--text2); font-size:0.96rem; }
   .form-success .gold-icon { font-size:2rem; margin-bottom:1rem; color:var(--gold); }
 
   .whatsapp-cta { background:var(--bg2); border-top:1px solid var(--border2); padding:4rem; display:flex; align-items:center; justify-content:space-between; gap:2rem; flex-wrap:wrap; }
@@ -112,30 +114,30 @@
       <div class="section-tag reveal">Kontakt</div>
       <h2 class="section-title reveal reveal-delay-1" style="font-size:clamp(1.8rem,3vw,2.8rem);">Tu smo za vas<br>uvijek</h2>
       <div class="contact-methods reveal reveal-delay-2">
-        <div class="contact-method">
+        <a class="contact-method" href="https://wa.me/385913240003" target="_blank" rel="noopener noreferrer" aria-label="Otvorite WhatsApp razgovor s Emili Royal Transfers">
           <div class="contact-method-icon">📱</div>
           <div>
             <div class="contact-method-label">WhatsApp</div>
             <div class="contact-method-value">+385 91 3240003</div>
             <div class="contact-method-note">Najbrži odgovor — odmah</div>
           </div>
-        </div>
-        <div class="contact-method">
+        </a>
+        <a class="contact-method" href="mailto:miran10021994@gmail.com" aria-label="Pošaljite email Emili Royal Transfers">
           <div class="contact-method-icon">✉</div>
           <div>
             <div class="contact-method-label">Email</div>
             <div class="contact-method-value">miran10021994@gmail.com</div>
             <div class="contact-method-note">Odgovaramo unutar 1 sata</div>
           </div>
-        </div>
-        <div class="contact-method">
+        </a>
+        <a class="contact-method" href="https://www.google.com/maps/search/?api=1&query=Ulica+od+Nuncijate%2C+Dubrovnik%2C+Hrvatska" target="_blank" rel="noopener noreferrer" aria-label="Otvorite lokaciju u Google Maps">
           <div class="contact-method-icon">📍</div>
           <div>
             <div class="contact-method-label">Lokacija</div>
             <div class="contact-method-value">Dubrovnik, Hrvatska</div>
             <div class="contact-method-note">Ulica od Nuncijate</div>
           </div>
-        </div>
+        </a>
         <div class="contact-method">
           <div class="contact-method-icon">🕐</div>
           <div>
