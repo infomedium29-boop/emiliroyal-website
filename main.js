@@ -23,11 +23,23 @@ window.addEventListener('scroll', function() {
   if (nav) nav.classList.toggle('scrolled', window.scrollY > 60);
 });
 
-// ACTIVE LINK
+// ACTIVE LINK — supports clean URLs (/usluge) and .html URLs alike
 (function() {
-  var path = window.location.pathname.split('/').pop() || 'index.html';
+  function normalizePath(value) {
+    try {
+      var pathname = new URL(value, window.location.origin).pathname;
+      pathname = pathname.replace(/\/index\.html$/i, '/').replace(/\.html$/i, '');
+      pathname = pathname.replace(/\/+$/, '');
+      return pathname || '/';
+    } catch (e) {
+      return value || '/';
+    }
+  }
+
+  var current = normalizePath(window.location.pathname);
   document.querySelectorAll('.nav-links a, .mobile-menu-links a').forEach(function(a) {
-    if (a.getAttribute('href') === path) a.classList.add('active');
+    var href = a.getAttribute('href');
+    if (href && normalizePath(href) === current) a.classList.add('active');
   });
 })();
 

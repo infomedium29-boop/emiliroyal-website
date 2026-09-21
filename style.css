@@ -373,3 +373,173 @@ footer { background: var(--bg2); border-top: 1px solid var(--border2); }
   .destination-mini-grid { grid-template-columns: 1fr; }
   .destination-mini-card, .destination-mini-card:first-child { min-height: 300px; }
 }
+
+/* =========================================================
+   PREMIUM FLOATING NAVIGATION — high contrast on all heroes
+   ========================================================= */
+#navbar {
+  top: 18px;
+  left: clamp(18px, 2.3vw, 40px);
+  right: clamp(18px, 2.3vw, 40px);
+  width: auto;
+  height: 76px;
+  padding: 0 16px 0 22px;
+  border: 1px solid rgba(255,255,255,0.13);
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(18,17,14,0.92), rgba(22,20,16,0.84));
+  -webkit-backdrop-filter: blur(20px) saturate(135%);
+  backdrop-filter: blur(20px) saturate(135%);
+  box-shadow: 0 16px 50px rgba(0,0,0,0.24), inset 0 1px 0 rgba(255,255,255,0.035);
+  transition: top 0.3s ease, height 0.3s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+#navbar.scrolled {
+  top: 12px;
+  height: 70px;
+  background: rgba(18,17,14,0.96);
+  border-color: rgba(184,148,63,0.28);
+  box-shadow: 0 14px 46px rgba(0,0,0,0.24), 0 0 0 1px rgba(255,255,255,0.015) inset;
+}
+
+/* Compact wordmark in the floating navigation. The original logo remains in the footer. */
+#navbar .logo-wrap {
+  min-width: 205px;
+  height: 54px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1px;
+  padding-left: 4px;
+  color: #f7f2e8;
+}
+#navbar .logo-img { display: none; }
+#navbar .logo-wrap::before {
+  content: 'EMILI';
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.72rem;
+  font-weight: 600;
+  line-height: 0.92;
+  letter-spacing: 0.16em;
+  color: #f7f2e8;
+}
+#navbar .logo-wrap::after {
+  content: 'ROYAL TRANSFERS';
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.61rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.26em;
+  color: #c7a451;
+}
+
+.nav-links { gap: 2px; }
+.nav-links a {
+  color: rgba(255,255,255,0.78);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.125em;
+  padding: 0.72rem 0.92rem;
+  border-radius: 10px;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+.nav-links a::after {
+  bottom: 4px;
+  left: 0.92rem;
+  right: 0.92rem;
+  background: #c7a451;
+}
+.nav-links a:hover {
+  color: #fff;
+  background: rgba(255,255,255,0.065);
+}
+.nav-links a.active {
+  color: #d8b65e;
+  background: rgba(184,148,63,0.08);
+}
+.nav-cta {
+  margin-left: 0.7rem;
+  padding: 0.78rem 1.35rem !important;
+  border-radius: 11px;
+  background: linear-gradient(135deg, #c7a451, #a98232) !important;
+  color: #17140f !important;
+  box-shadow: 0 8px 24px rgba(154,123,60,0.28);
+  font-weight: 600 !important;
+  letter-spacing: 0.12em !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease !important;
+}
+.nav-cta:hover {
+  background: linear-gradient(135deg, #d5b766, #b58e39) !important;
+  color: #17140f !important;
+  transform: translateY(-1px);
+  box-shadow: 0 11px 30px rgba(154,123,60,0.34);
+}
+
+.hamburger {
+  border-color: rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.055);
+  border-radius: 11px;
+}
+.hamburger span { background: #f7f2e8; }
+
+.mobile-menu {
+  background: rgba(17,16,13,0.985);
+  -webkit-backdrop-filter: blur(24px);
+  backdrop-filter: blur(24px);
+}
+.mobile-menu-links li,
+.mobile-menu-links li:first-child { border-color: rgba(255,255,255,0.09); }
+.mobile-menu-links a { color: rgba(255,255,255,0.76); }
+.mobile-menu-links a:hover,
+.mobile-menu-links a.active { color: #d1ad55; }
+.mobile-menu-cta a {
+  background: linear-gradient(135deg, #c7a451, #a98232);
+  color: #17140f;
+  border-radius: 10px;
+  font-weight: 600;
+  padding: 0.9rem 2.2rem;
+}
+
+@media (max-width: 1150px) and (min-width: 901px) {
+  #navbar { left: 18px; right: 18px; padding: 0 13px 0 18px; }
+  #navbar .logo-wrap { min-width: 165px; }
+  #navbar .logo-wrap::before { font-size: 1.5rem; }
+  #navbar .logo-wrap::after { font-size: 0.53rem; letter-spacing: 0.2em; }
+  .nav-links a { padding: 0.66rem 0.66rem; font-size: 0.7rem; }
+  .nav-links a::after { left: 0.66rem; right: 0.66rem; }
+  .nav-cta { padding: 0.72rem 1rem !important; margin-left: 0.3rem; }
+}
+
+@media (max-width: 900px) {
+  #navbar,
+  #navbar.scrolled {
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    height: 68px;
+    padding: 0 12px 0 17px;
+    border-radius: 18px;
+    background: rgba(17,16,13,0.95);
+    border-color: rgba(255,255,255,0.12);
+    box-shadow: 0 12px 34px rgba(0,0,0,0.24);
+  }
+  #navbar .logo-wrap {
+    min-width: 0;
+    height: 50px;
+    padding-left: 1px;
+  }
+  #navbar .logo-wrap::before { font-size: 1.42rem; letter-spacing: 0.14em; }
+  #navbar .logo-wrap::after { font-size: 0.52rem; letter-spacing: 0.2em; }
+  .hamburger {
+    width: 42px;
+    height: 42px;
+    padding: 10px;
+    gap: 5px;
+  }
+  .mobile-menu-links { padding: 0 1.5rem; }
+  .mobile-menu-links a { font-size: 2.15rem; color: rgba(255,255,255,0.82); }
+}
+
+@media (max-width: 420px) {
+  #navbar .logo-wrap::before { font-size: 1.26rem; }
+  #navbar .logo-wrap::after { font-size: 0.47rem; letter-spacing: 0.16em; }
+}
