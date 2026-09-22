@@ -278,13 +278,42 @@
     const data = Object.fromEntries(new FormData(form).entries());
 
     try {
-      const response = await fetch('/api/contact', {
+      // Access key ostaje spremljen u Cloudflareu, ali se sama rezervacija
+      // šalje direktno iz preglednika prema Web3Forms kako se ne bi dijelio
+      // rate limit Cloudflare Pages Function proxyja.
+      const configResponse = await fetch('/api/form-config', {
+        method: 'GET',
+        headers: { 'Accept': 'application/json' },
+        cache: 'no-store'
+      });
+      const config = await configResponse.json().catch(function () { return {}; });
+
+      if (!configResponse.ok || !config.success || !config.access_key) {
+        throw new Error(config.message || 'Kontakt forma trenutno nije dostupna.');
+      }
+
+      const payload = {
+        access_key: config.access_key,
+        subject: 'Nova rezervacija — ' + data.service,
+        from_name: 'Emili Royal Transfers Web',
+        name: data.name || '',
+        email: data.email || '',
+        'Telefon / WhatsApp': data.phone || 'Nije navedeno',
+        'Broj putnika': data.passengers || 'Nije navedeno',
+        'Vrsta usluge': data.service || '',
+        'Datum putovanja': data.travel_date || 'Nije navedeno',
+        'Željeno vrijeme': data.travel_time || 'Nije navedeno',
+        message: data.message || 'Nema dodatne poruke.',
+        botcheck: data.botcheck || ''
+      };
+
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
-        body: JSON.stringify(data)
+        body: JSON.stringify(payload)
       });
 
       const result = await response.json().catch(function () { return {}; });
