@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://emiliroyal-transfers.hr/sitemap.xml
+Sitemap: https://emiliroyal-transfers.com/sitemap.xml

@@ -5,10 +5,10 @@
 ## Website pages
 
 - [Home](/)
-- [Services](/usluge.html)
-- [Destinations](/destinacije.html)
-- [About](/o-nama.html)
-- [Contact and booking](/kontakt.html)
+- [Services](/usluge)
+- [Destinations](/destinacije)
+- [About](/o-nama)
+- [Contact and booking](/kontakt)
 
 ## Main services
 
@@ -21,16 +21,16 @@
 
 ## Important destinations
 
-- [Dubrovnik](/destinacije.html#dubrovnik)
-- [Dubrovnik Panorama](/destinacije.html#panorama)
-- [Mostar and Kravice Waterfalls](/destinacije.html#mostar)
-- [Montenegro: Kotor, Perast and Ostrog](/destinacije.html#montenegro)
+- [Dubrovnik](/destinacije#dubrovnik)
+- [Dubrovnik Panorama](/destinacije#panorama)
+- [Mostar and Kravice Waterfalls](/destinacije#mostar)
+- [Montenegro: Kotor, Perast and Ostrog](/destinacije#montenegro)
 
 ## Contact
 
 - [WhatsApp / phone](https://wa.me/385913240003)
 - [Email](mailto:miran10021994@gmail.com)
-- [Booking page](/kontakt.html)
+- [Booking page](/kontakt)
 
 ## Notes for AI agents
 
