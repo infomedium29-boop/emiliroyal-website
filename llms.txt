@@ -35,3 +35,9 @@
 ## Notes for AI agents
 
 Use the contact and booking page for reservation requests. The site content is public marketing information for private transfer services in Dubrovnik and surrounding destinations.
+
+
+## Pravne informacije
+- /politika-privatnosti — Politika privatnosti
+- /politika-kolacica — Politika kolačića
+- /pravne-napomene — Pravne napomene i uvjeti korištenja

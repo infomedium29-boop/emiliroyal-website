@@ -184,13 +184,17 @@
             <span id="submitBtnText">Pošalji rezervaciju</span>
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 8h12M10 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
-          <p class="form-note">* Obavezna polja · Podaci su sigurni</p>
+          <div class="form-privacy-notice">
+            <span aria-hidden="true">i</span>
+            <p>Slanjem obrasca šaljete zahtjev za rezervaciju. Podatke koristimo za obradu upita i dogovor usluge. Rezervacija je potvrđena tek nakon naše povratne potvrde. Više u <a href="/politika-privatnosti">Politici privatnosti</a>.</p>
+          </div>
+          <p class="form-note">* Obavezna polja</p>
           <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
         </form>
         <div class="form-success" id="formSuccess">
           <div class="gold-icon">✦</div>
-          <h3>Rezervacija primljena!</h3>
-          <p>Kontaktirat ćemo vas unutar 1 sata.<br>Hvala što ste odabrali Emili Royal Transfers.</p>
+          <h3>Zahtjev je zaprimljen!</h3>
+          <p>Kontaktirat ćemo vas unutar 1 sata.<br>Hvala na vašem upitu za Emili Royal Transfers.</p>
         </div>
       </div>
     </div>
@@ -246,8 +250,16 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2026 Emili Royal Transfers. Sva prava pridržana.</p>
-    <p style="font-size:0.75rem;color:var(--muted);">Ulica od Nuncijate, Dubrovnik</p>
+    <div class="footer-bottom-meta">
+      <p>© 2026 Emili Royal Transfers. Sva prava pridržana.</p>
+      <p>Od Nuncijate 10, 20000 Dubrovnik</p>
+    </div>
+    <div class="footer-legal-links" aria-label="Pravne informacije">
+      <a href="/politika-privatnosti">Privatnost</a>
+      <a href="/politika-kolacica">Kolačići</a>
+      <a href="/pravne-napomene">Pravne napomene</a>
+      <button type="button" data-cookie-settings>Postavke kolačića</button>
+    </div>
   </div>
 </footer>
 <script src="/main.js"></script>
