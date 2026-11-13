@@ -704,3 +704,59 @@ footer { background: var(--bg2); border-top: 1px solid var(--border2); }
   #navbar .language-switch {margin-right:6px;}
   #navbar .language-switch .lang-option {padding:8px 7px; font-size:10px;}
 }
+
+
+/* =====================================================================
+   LANGUAGE NAV · consistent visibility on every HR/EN route
+   Navigation actions form a dedicated, non-shrinking right-hand group.
+   ===================================================================== */
+#navbar { gap: clamp(8px, 1.2vw, 18px); }
+#navbar .logo-wrap { flex-shrink: 1; }
+#navbar .nav-links {
+  flex: 0 1 auto;
+  min-width: 0;
+  margin-left: auto;
+}
+#navbar .nav-actions {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 9px;
+  margin-left: clamp(5px, .7vw, 14px);
+  position: relative;
+  z-index: 2;
+}
+#navbar .nav-actions .language-switch {
+  display: inline-flex !important;
+  flex: 0 0 auto;
+  align-items: center;
+  visibility: visible !important;
+  opacity: 1 !important;
+  margin: 0;
+  white-space: nowrap;
+}
+#navbar .nav-actions .lang-option {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 32px;
+}
+@media (max-width: 1150px) and (min-width: 901px) {
+  #navbar { gap: 6px; }
+  #navbar .nav-actions { margin-left: 4px; gap: 6px; }
+  #navbar .nav-actions .lang-option { min-width: 26px; }
+}
+@media (max-width: 900px) {
+  #navbar .nav-links { display: none; }
+  #navbar .nav-actions { margin-left: auto; gap: 8px; }
+  #navbar .nav-actions .hamburger { flex: 0 0 42px; }
+}
+@media (max-width: 390px) {
+  #navbar { gap: 5px; padding-left: 10px; padding-right: 8px; }
+  #navbar .logo-wrap { padding-left: 5px; padding-right: 5px; }
+  #navbar .logo-img { max-width: 130px !important; }
+  #navbar .nav-actions { gap: 6px; }
+  #navbar .nav-actions .language-switch { padding: 2px; }
+  #navbar .nav-actions .lang-option { min-width: 27px; padding: 8px 6px; }
+}
