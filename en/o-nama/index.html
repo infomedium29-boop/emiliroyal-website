@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<link href="/favicon.png" rel="icon" type="image/png"/>
+<link href="/favicon.png" rel="apple-touch-icon"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us | Emili Royal Transfers Dubrovnik</title>
+<meta content="Meet Emili Royal Transfers, a Dubrovnik-based private transfer service with more than ten years of experience and professional local drivers." name="description"/>
+<link href="https://emiliroyal-transfers.com/en/o-nama" rel="canonical"/>
+<meta content="index, follow" name="robots"/>
+<link href="/style.css" rel="stylesheet"/>
+<style>
+  .about-intro { background: var(--bg); }
+  .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:6rem; align-items:center; }
+  .about-img { position:relative; }
+  .about-img img { width:100%; height:540px; object-fit:cover; filter:saturate(0.8) brightness(0.95); position:relative; z-index:1; }
+  .about-img::before { content:''; position:absolute; top:-20px; left:-20px; right:20px; bottom:20px; border:1px solid rgba(154,123,60,0.2); z-index:0; }
+  .about-text p { color:var(--muted); font-size:0.95rem; line-height:1.85; margin-bottom:1.5rem; }
+  .about-text strong { color:var(--text); font-weight:500; }
+
+  .numbers { background:var(--bg2); border-top:1px solid var(--border2); border-bottom:1px solid var(--border2); }
+  .numbers-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--border2); border:1px solid var(--border2); }
+  .number-item { padding:3rem 2rem; background:var(--bg2); text-align:center; transition:background 0.3s; }
+  .number-item:hover { background:var(--bg3); }
+  .number-big { font-family:'Cormorant Garamond',serif; font-size:3rem; font-weight:300; color:var(--gold); letter-spacing:-0.02em; line-height:1; }
+  .number-label { font-size:0.72rem; color:var(--muted); margin-top:0.5rem; letter-spacing:0.1em; text-transform:uppercase; }
+
+  .quote-band { background:var(--bg); border-top:1px solid var(--border2); border-bottom:1px solid var(--border2); padding:5rem 4rem; text-align:center; position:relative; overflow:hidden; }
+  .quote-band::before { content:'"'; position:absolute; font-family:'Cormorant Garamond',serif; font-size:20rem; font-weight:300; color:rgba(154,123,60,0.05); top:-5rem; left:50%; transform:translateX(-50%); line-height:1; pointer-events:none; }
+  .quote-band blockquote { font-family:'Cormorant Garamond',serif; font-size:clamp(1.3rem,3vw,2rem); font-weight:300; font-style:italic; color:var(--text); max-width:650px; margin:0 auto 1.5rem; line-height:1.6; }
+  .quote-band blockquote em { color:var(--gold); }
+  .quote-band cite { font-size:0.75rem; color:var(--muted); letter-spacing:0.15em; text-transform:uppercase; font-style:normal; }
+
+  .values { background:var(--bg2); }
+  .values-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--border2); border:1px solid var(--border2); margin-top:3.5rem; }
+  .value-card { background:var(--bg2); padding:2.5rem; transition:background 0.3s; cursor:none; }
+  .value-card:hover { background:var(--bg3); }
+  .value-icon { font-size:1.2rem; margin-bottom:1.2rem; color:var(--gold); display:block; }
+  .value-card h3 { font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:400; margin-bottom:0.6rem; }
+  .value-card p { font-size:0.88rem; color:var(--muted); line-height:1.7; }
+
+  @media (max-width:900px) {
+    .about-grid { grid-template-columns:1fr; gap:3rem; }
+    .about-img { display:none; }
+    .values-grid { grid-template-columns:1fr; }
+    .numbers-grid { grid-template-columns:1fr 1fr; }
+    .quote-band { padding:4rem 1.5rem; }
+  }
+</style>
+<link href="https://emiliroyal-transfers.com/o-nama" hreflang="hr" rel="alternate"/><link href="https://emiliroyal-transfers.com/en/o-nama" hreflang="en" rel="alternate"/><link href="https://emiliroyal-transfers.com/o-nama" hreflang="x-default" rel="alternate"/><meta content="website" property="og:type"/><meta content="Emili Royal Transfers" property="og:site_name"/><meta content="en_GB" property="og:locale"/><meta content="About Us | Emili Royal Transfers Dubrovnik" property="og:title"/><meta content="Meet Emili Royal Transfers, a Dubrovnik-based private transfer service with more than ten years of experience and professional local drivers." property="og:description"/><meta content="https://emiliroyal-transfers.com/en/o-nama" property="og:url"/><meta content="summary" name="twitter:card"/></head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-follower" id="cursorFollower"></div>
+<nav id="navbar">
+<a class="logo-wrap" href="/en/"><img alt="Emili Royal Transfers" class="logo-img" src="/logo.png"/></a>
+<ul class="nav-links">
+<li><a href="/en/">Home</a></li>
+<li><a href="/en/usluge">Services</a></li>
+<li><a href="/en/destinacije">Destinations</a></li>
+<li><a href="/en/o-nama">About Us</a></li>
+<li><a class="nav-cta" href="/en/kontakt">Book Now</a></li>
+</ul>
+<div aria-label="Choose language" class="language-switch" role="group"><a aria-label="Hrvatski" class="lang-option" href="/o-nama" hreflang="hr" lang="hr">HR</a><a aria-current="page" aria-label="English" class="lang-option is-active" href="/en/o-nama" hreflang="en" lang="en">EN</a></div><button aria-controls="mobileMenu" aria-expanded="false" aria-label="Open menu" class="hamburger" id="hamburger">
+<span></span><span></span><span></span>
+</button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+<ul class="mobile-menu-links">
+<li><a href="/en/">Home</a></li>
+<li><a href="/en/usluge">Services</a></li>
+<li><a href="/en/destinacije">Destinations</a></li>
+<li><a href="/en/o-nama">About Us</a></li>
+<li><a href="/en/kontakt">Contact</a></li>
+</ul>
+<div class="mobile-menu-cta"><a href="/en/kontakt">Book Now</a></div>
+</div>
+<div class="page-hero page-hero--img" style="background-image: url('/dubrovnik.jpg');">
+<div class="page-hero-overlay"></div>
+<div class="page-hero-line"></div>
+<div class="page-hero-tag">About Us</div>
+<h1>More Than a Decade<br/>at <em>Your</em> Service</h1>
+<p class="page-hero-sub">Emili Royal Transfers — your trusted partner for private transport in Dubrovnik and the surrounding area.</p>
+</div>
+<!-- ABOUT -->
+<section class="about-intro">
+<div class="about-grid">
+<div class="about-img reveal">
+<img alt="Dubrovnik" src="/onama.jpg"/>
+</div>
+<div class="about-text">
+<div class="section-tag reveal">Our Story</div>
+<h2 class="section-title reveal reveal-delay-1">Who We Are</h2>
+<div class="reveal reveal-delay-2">
+<p>Welcome! We have been providing private transport services for many years. <strong>Our mission is to offer safe, efficient and reliable transfers</strong> for every guest, wherever you are travelling.</p>
+<p>Whether you need an airport transfer, a private excursion, an intercity journey or simply a comfortable ride through Dubrovnik — <strong>we are here for you 24 hours a day, 365 days a year.</strong></p>
+<p>Our experienced drivers know Dubrovnik and the wider region inside out. We speak English, Italian and Croatian, and tailor every journey to your needs.</p>
+<p>We believe that every journey should be <strong>a pleasure, not a source of stress.</strong> That is why we offer fixed prices, punctuality and professional service you can rely on.</p>
+</div>
+<a class="btn-primary reveal reveal-delay-3" href="/en/kontakt" style="margin-top:2rem;">Contact Us →</a>
+</div>
+</div>
+</section>
+<!-- NUMBERS -->
+<section class="numbers">
+<div class="numbers-grid">
+<div class="number-item reveal"><div class="number-big">10+</div><div class="number-label">Years of Experience</div></div>
+<div class="number-item reveal reveal-delay-1"><div class="number-big">5000+</div><div class="number-label">Happy Passengers</div></div>
+<div class="number-item reveal reveal-delay-2"><div class="number-big">0–24</div><div class="number-label">Availability</div></div>
+<div class="number-item reveal reveal-delay-3"><div class="number-big">4.9★</div><div class="number-label">Average Rating</div></div>
+</div>
+</section>
+<!-- QUOTE -->
+<div class="quote-band">
+<blockquote class="reveal">"Every journey should be <em>a special experience</em> — and we want you to feel that way."</blockquote>
+<cite class="reveal reveal-delay-1">— Emili Royal Transfers</cite>
+</div>
+<!-- VALUES -->
+<section class="values">
+<div class="section-tag reveal">Our Values</div>
+<h2 class="section-title reveal reveal-delay-1">What Drives Us</h2>
+<div class="values-grid">
+<div class="value-card reveal"><span class="value-icon">✦</span><h3>Safety</h3><p>Your safety comes first. Regularly maintained vehicles and experienced drivers help ensure a safe journey.</p></div>
+<div class="value-card reveal reveal-delay-1"><span class="value-icon">✦</span><h3>Punctuality</h3><p>We value your time. We arrive at the agreed location, at the agreed time — no excuses.</p></div>
+<div class="value-card reveal reveal-delay-2"><span class="value-icon">✦</span><h3>Comfort</h3><p>Air-conditioned vehicles, cleanliness and courtesy — every guest deserves a premium experience.</p></div>
+<div class="value-card reveal reveal-delay-3"><span class="value-icon">✦</span><h3>Transparency</h3><p>Fixed prices agreed in advance. No hidden charges or unexpected extras.</p></div>
+<div class="value-card reveal reveal-delay-4"><span class="value-icon">✦</span><h3>Availability</h3><p>Available 24/7, all year. Late flight or early airport transfer — we are always here for you.</p></div>
+<div class="value-card reveal reveal-delay-4"><span class="value-icon">✦</span><h3>Local Knowledge</h3><p>We were born and raised in Dubrovnik. We know every corner of this beautiful city.</p></div>
+</div>
+</section>
+<!-- FOOTER -->
+<footer>
+<div class="footer-top">
+<div class="footer-brand">
+<a class="logo-wrap" href="/en/"><img alt="Emili Royal Transfers" class="logo-img" src="/logo.png"/></a>
+<p>Safe, comfortable and reliable journeys. Available 24/7, 365 days a year.</p>
+</div>
+<div class="footer-col">
+<h4>Explore</h4>
+<ul>
+<li><a href="/en/">Home</a></li>
+<li><a href="/en/usluge">Services</a></li>
+<li><a href="/en/destinacije">Destinations</a></li>
+<li><a href="/en/o-nama">About Us</a></li>
+<li><a href="/en/kontakt">Contact</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Services</h4>
+<ul>
+<li><a href="/en/usluge">Airport transfer</a></li>
+<li><a href="/en/usluge">City Transfers</a></li>
+<li><a href="/en/usluge">Intercity Transfers</a></li>
+<li><a href="/en/destinacije">Destinations &amp; Excursions</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Contact</h4>
+<ul>
+<li><a href="https://wa.me/385913240003">+385 91 3240003</a></li>
+<li><a href="mailto:miran10021994@gmail.com">miran10021994@gmail.com</a></li>
+<li><a href="#">Dubrovnik, Croatia</a></li>
+<li><a href="#">Available 24/7</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<div class="footer-bottom-meta">
+<p>© 2026 Emili Royal Transfers. All rights reserved.</p>
+<p>Od Nuncijate 10, 20000 Dubrovnik</p>
+</div>
+<div aria-label="Legal information" class="footer-legal-links">
+<a href="/en/politika-privatnosti">Privacy</a>
+<a href="/en/politika-kolacica">Cookies</a>
+<a href="/en/pravne-napomene">Legal Notice</a>
+<button data-cookie-settings="" type="button">Cookie Settings</button>
+</div>
+</div>
+</footer>
+<script src="/main.js"></script>
+</body>
+</html>

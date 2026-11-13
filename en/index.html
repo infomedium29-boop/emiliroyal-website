@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<link href="/favicon.png" rel="icon" type="image/png"/>
+<link href="/favicon.png" rel="apple-touch-icon"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dubrovnik Private Transfers &amp; Airport Transfers | Emili Royal Transfers</title>
+<meta content="Private transfers in Dubrovnik, airport pickups, intercity journeys and private excursions. Reliable drivers, fixed prices and service available 24/7." name="description"/>
+<link href="https://emiliroyal-transfers.com/en/" rel="canonical"/>
+<meta content="index, follow" name="robots"/>
+<link href="/style.css" rel="stylesheet"/>
+<style>
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 4rem 7rem;
+    position: relative;
+    overflow: hidden;
+  }
+  /* Ensure hero content never overlaps navbar */
+  .hero-left {
+    position: relative; z-index: 2;
+    max-width: 700px;
+    padding-top: 100px;
+  }
+
+  /* VIDEO BACKGROUND */
+  .hero-video {
+    position: absolute; inset: 0;
+    z-index: 0;
+  }
+  .hero-video video {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    filter: saturate(0.7) brightness(0.55);
+  }
+  .hero-video::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(
+      to top,
+      rgba(26,24,18,0.92) 0%,
+      rgba(26,24,18,0.4) 50%,
+      rgba(26,24,18,0.15) 100%
+    );
+  }
+
+  .hero-left {
+    position: relative; z-index: 2;
+    max-width: 700px;
+  }
+
+  .hero .btn-primary {
+    background: var(--gold) !important;
+    color: #fff !important;
+    padding: 1rem 2.2rem !important;
+    font-size: 0.78rem !important;
+    letter-spacing: 0.14em !important;
+    border: none !important;
+    transition: background 0.2s, box-shadow 0.2s !important;
+  }
+  .hero .btn-primary:hover {
+    background: #b8943f !important;
+    box-shadow: 0 8px 30px rgba(201,168,76,0.4) !important;
+  }
+  .hero .btn-ghost {
+    border: 1px solid rgba(240,237,232,0.4) !important;
+    color: rgba(240,237,232,0.85) !important;
+    padding: 1rem 2rem !important;
+    font-size: 0.78rem !important;
+    letter-spacing: 0.14em !important;
+    backdrop-filter: blur(4px) !important;
+    background: rgba(240,237,232,0.05) !important;
+  }
+  .hero .btn-ghost:hover {
+    border-color: var(--gold) !important;
+    color: var(--gold) !important;
+    background: rgba(201,168,76,0.08) !important;
+  }
+
+  /* GOOGLE REVIEWS BADGE */
+  .hero-reviews {
+    display: inline-flex; align-items: center; gap: 0.8rem;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 0.5rem 1.1rem 0.5rem 0.7rem;
+    margin-bottom: 2rem;
+    width: fit-content;
+    animation: fadeUp 1s 0.1s both;
+  }
+  .hero-reviews-stars { display:flex; gap:2px; }
+  .hero-reviews-stars span { color: #f5c518; font-size: 0.75rem; }
+  .hero-reviews-text { font-size: 0.72rem; color: rgba(240,237,232,0.85); letter-spacing: 0.05em; font-family: 'DM Sans', sans-serif; }
+  .hero-reviews-text strong { color: #f0ede8; font-weight: 600; }
+  .google-icon { width: 18px; height: 18px; flex-shrink: 0; }
+
+  /* WHY US SECTION */
+  .why-section { background: var(--bg2); border-top: 1px solid var(--border2); }
+  .why-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--border2); border: 1px solid var(--border2); margin-top: 3.5rem; }
+  .why-card { background: var(--bg2); padding: 2.5rem 2rem; text-align: center; transition: background 0.3s; cursor: none; }
+  .why-card:hover { background: var(--bg3); }
+  .why-card-num { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 300; color: var(--gold); line-height: 1; margin-bottom: 0.5rem; }
+  .why-card-title { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 400; margin-bottom: 0.6rem; color: var(--text); }
+  .why-card-text { font-size: 0.82rem; color: var(--muted); line-height: 1.65; }
+  .why-card-icon { font-size: 1.5rem; margin-bottom: 1rem; display: block; }
+
+  @media (max-width:900px) {
+    .why-grid { grid-template-columns: 1fr 1fr; }
+    .hero-reviews { margin-bottom: 1.5rem; }
+  }
+  .hero-scroll {
+    position: absolute; bottom: 2.5rem; left: 50%;
+    transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 0.4rem;
+    color: rgba(240,237,232,0.5); font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase;
+    animation: fadeIn 1s 1.4s both; z-index: 2;
+  }
+  .scroll-line { width: 1px; height: 36px; background: linear-gradient(to bottom, rgba(240,237,232,0.5), transparent); animation: scrollDrop 2s ease-in-out infinite; }
+  @keyframes scrollDrop { 0%{transform:scaleY(0);transform-origin:top} 50%{transform:scaleY(1);transform-origin:top} 51%{transform:scaleY(1);transform-origin:bottom} 100%{transform:scaleY(0);transform-origin:bottom} }
+
+  .hero-eyebrow {
+    display: flex; align-items: center; gap: 0.8rem;
+    margin-bottom: 2rem;
+  }
+  .hero-line { width: 32px; height: 1px; background: var(--gold); }
+  .hero-eyebrow span { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-family: 'DM Sans', sans-serif; }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 5vw, 5.5rem);
+    font-weight: 300;
+    line-height: 1.0;
+    letter-spacing: -0.01em;
+    color: #f0ede8;
+    margin-bottom: 1.5rem;
+    animation: fadeUp 1s 0.3s both;
+  }
+  .hero h1 em { font-style: italic; color: #c9a84c; }
+  .hero h1 strong { font-weight: 600; color: #f0ede8; }
+
+  .hero-sub {
+    font-size: 0.95rem; color: rgba(240,237,232,0.7);
+    max-width: 460px; line-height: 1.85;
+    margin-bottom: 2.5rem;
+    animation: fadeUp 1s 0.5s both;
+  }
+  .hero-actions {
+    display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;
+    animation: fadeUp 1s 0.7s both;
+    margin-bottom: 4rem;
+  }
+  .hero-badge {
+    display: flex; align-items: center; gap: 2rem;
+    animation: fadeIn 1s 1s both;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(240,237,232,0.15);
+  }
+  .hero-badge-item { text-align: left; }
+  .hero-badge-num { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; color: #f0ede8; line-height: 1; }
+  .hero-badge-label { font-size: 0.65rem; color: rgba(240,237,232,0.5); letter-spacing: 0.12em; text-transform: uppercase; margin-top: 0.25rem; }
+  .hero-badge-divider { width: 1px; height: 32px; background: rgba(240,237,232,0.15); flex-shrink: 0; }
+
+  @keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+  @keyframes fadeIn { from{opacity:0} to{opacity:1} }
+
+  /* INTRO STRIP */
+  .intro-strip {
+    background: var(--text); color: var(--bg);
+    padding: 2rem 4rem;
+    display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap;
+  }
+  .intro-strip p { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 300; font-style: italic; max-width: 600px; line-height: 1.5; }
+  .intro-strip span { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(250,248,244,0.5); white-space: nowrap; }
+
+  /* SERVICES */
+  .services { background: var(--bg); padding-bottom: 0; }
+  .services-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 4rem; flex-wrap: wrap; gap: 2rem; }
+  .services-list { display: flex; flex-direction: column; gap: 0; }
+  .service-row {
+    display: grid; grid-template-columns: 80px 1fr 360px auto;
+    gap: 3rem; align-items: center;
+    padding: 2.5rem 0;
+    border-bottom: 1px solid var(--border2);
+    cursor: none; transition: padding-left 0.3s, background 0.3s;
+    position: relative;
+    text-decoration: none; color: inherit;
+  }
+  .service-row:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+  .service-row:first-child { border-top: 1px solid var(--border2); }
+  .service-row:hover { padding-left: 1rem; }
+  .service-row-num { font-family: 'Cormorant Garamond', serif; font-size: 0.9rem; color: var(--gold); letter-spacing: 0.1em; }
+  .service-row h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 400; color: var(--text); }
+  .service-row p { font-size: 0.88rem; color: var(--muted); line-height: 1.7; }
+  .service-row-img { width: 100%; height: 70px; object-fit: cover; filter: saturate(0.8); opacity: 0; transition: opacity 0.4s, height 0.4s; overflow: hidden; }
+  .service-row:hover .service-row-img { opacity: 1; }
+  .service-row-arrow { width: 36px; height: 36px; border: 1px solid var(--border2); display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 1rem; transition: all 0.3s; flex-shrink: 0; }
+  .service-row:hover .service-row-arrow { border-color: var(--gold); color: var(--gold); transform: rotate(45deg); }
+
+  /* SPLIT SECTION */
+  .split { background: var(--bg2); }
+  .split-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  .split-img { position: relative; overflow: hidden; min-height: 560px; }
+  .split-img img { width:100%; height:100%; object-fit:cover; filter:saturate(0.8) brightness(0.95); }
+  .split-img::after { content:''; position:absolute; inset:0; border-right:4px solid var(--bg2); pointer-events:none; }
+  .split-content { padding: 5rem; display: flex; flex-direction: column; justify-content: center; }
+  .split-content p { color: var(--muted); font-size: 0.95rem; line-height: 1.85; margin-bottom: 1.5rem; }
+  .split-content strong { color: var(--text); font-weight: 500; }
+  .reasons { display: flex; flex-direction: column; gap: 0; margin: 2rem 0; }
+  .reason { display: flex; gap: 1rem; padding: 1.1rem 0; border-bottom: 1px solid var(--border2); }
+  .reason:first-child { border-top: 1px solid var(--border2); }
+  .reason-icon { color: var(--gold); font-size: 0.7rem; flex-shrink: 0; margin-top: 4px; }
+  .reason h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 400; margin-bottom: 0.15rem; }
+  .reason p { font-size: 0.83rem; color: var(--muted); line-height: 1.6; margin: 0; }
+
+  /* TESTIMONIALS */
+  .testimonials { background: var(--bg); }
+  .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border2); border: 1px solid var(--border2); margin-top: 3.5rem; }
+  .testimonial-card { background: var(--bg); padding: 2.5rem; transition: background 0.3s; }
+  .testimonial-card:hover { background: var(--bg2); }
+  .t-stars { color: var(--gold); font-size: 0.7rem; letter-spacing: 0.15em; margin-bottom: 1.2rem; }
+  .t-text { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 400; font-style: italic; color: var(--text2); line-height: 1.65; margin-bottom: 1.8rem; }
+  .t-author { display: flex; gap: 0.8rem; align-items: center; }
+  .t-avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--gold-light); border: 1px solid rgba(154,123,60,0.25); display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 0.9rem; font-weight: 600; color: var(--gold); flex-shrink: 0; }
+  .t-name { font-size: 0.82rem; font-weight: 500; color: var(--text); }
+  .t-place { font-size: 0.75rem; color: var(--muted); }
+
+  /* CTA */
+  .cta-section {
+    background: var(--bg3);
+    padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr;
+    min-height: 380px;
+    border-top: 1px solid var(--border2);
+  }
+  .cta-img { overflow: hidden; }
+  .cta-img img { width:100%; height:100%; object-fit:cover; filter:saturate(0.75) brightness(0.9); }
+  .cta-content { padding: 5rem; display: flex; flex-direction: column; justify-content: center; }
+  .cta-content h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,3.5vw,3rem); font-weight:300; margin-bottom:1rem; line-height:1.15; }
+  .cta-content h2 em { color:var(--gold); font-style:italic; }
+  .cta-content p { color:var(--muted); font-size:0.9rem; line-height:1.8; margin-bottom:2rem; max-width:380px; }
+  .cta-btns { display:flex; gap:1rem; flex-wrap:wrap; }
+  .whatsapp-btn { display:inline-flex; align-items:center; gap:0.5rem; background:rgba(37,211,102,0.12); border:1px solid rgba(37,211,102,0.35); color:#1a7a3c; font-family:'DM Sans',sans-serif; font-size:0.75rem; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; padding:0.9rem 1.4rem; text-decoration:none; cursor:none; transition:background 0.2s; }
+  .whatsapp-btn:hover { background:rgba(37,211,102,0.22); }
+
+  @media (max-width:900px) {
+    .hero { padding: 0 1.5rem 5rem; }
+    .hero h1 { font-size: clamp(2.4rem, 10vw, 3.5rem); }
+    .hero-actions { flex-direction: column; align-items: stretch; gap: 0.8rem; }
+    .hero .btn-primary, .hero .btn-ghost { width: 100%; justify-content: center; }
+    .hero-badge { gap: 1.2rem; }
+    .hero-badge-num { font-size: 1.5rem; }
+    .intro-strip { padding:2rem 1.5rem; }
+    .service-row { grid-template-columns:60px 1fr; gap:1.5rem; }
+    .service-row p, .service-row-img, .service-row-arrow { display:none; }
+    .split-grid { grid-template-columns:1fr; }
+    .split-img { min-height:280px; }
+    .split-content { padding:3rem 1.5rem; }
+    .testimonials-grid { grid-template-columns:1fr; }
+    .cta-section { grid-template-columns:1fr; }
+    .cta-img { height:240px; }
+    .cta-content { padding:3rem 1.5rem; }
+  }
+</style>
+<link href="https://emiliroyal-transfers.com/" hreflang="hr" rel="alternate"/><link href="https://emiliroyal-transfers.com/en/" hreflang="en" rel="alternate"/><link href="https://emiliroyal-transfers.com/" hreflang="x-default" rel="alternate"/><meta content="website" property="og:type"/><meta content="Emili Royal Transfers" property="og:site_name"/><meta content="en_GB" property="og:locale"/><meta content="Dubrovnik Private Transfers &amp; Airport Transfers | Emili Royal Transfers" property="og:title"/><meta content="Private transfers in Dubrovnik, airport pickups, intercity journeys and private excursions. Reliable drivers, fixed prices and service available 24/7." property="og:description"/><meta content="https://emiliroyal-transfers.com/en/" property="og:url"/><meta content="summary" name="twitter:card"/></head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-follower" id="cursorFollower"></div>
+<nav id="navbar">
+<a class="logo-wrap" href="/en/"><img alt="Emili Royal Transfers" class="logo-img" src="/logo-nav.png"/></a>
+<ul class="nav-links">
+<li><a href="/en/">Home</a></li>
+<li><a href="/en/usluge">Services</a></li>
+<li><a href="/en/destinacije">Destinations</a></li>
+<li><a href="/en/o-nama">About Us</a></li>
+<li><a class="nav-cta" href="/en/kontakt">Book Now</a></li>
+</ul>
+<div aria-label="Choose language" class="language-switch" role="group"><a aria-label="Hrvatski" class="lang-option" href="/" hreflang="hr" lang="hr">HR</a><a aria-current="page" aria-label="English" class="lang-option is-active" href="/en/" hreflang="en" lang="en">EN</a></div><button aria-controls="mobileMenu" aria-expanded="false" aria-label="Open menu" class="hamburger" id="hamburger">
+<span></span><span></span><span></span>
+</button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+<ul class="mobile-menu-links">
+<li><a href="/en/">Home</a></li>
+<li><a href="/en/usluge">Services</a></li>
+<li><a href="/en/destinacije">Destinations</a></li>
+<li><a href="/en/o-nama">About Us</a></li>
+<li><a href="/en/kontakt">Contact</a></li>
+</ul>
+<div class="mobile-menu-cta"><a href="/en/kontakt">Book Now</a></div>
+</div>
+<!-- HERO -->
+<section class="hero">
+<div class="hero-video">
+<video autoplay="" loop="" muted="" playsinline="">
+<source src="/hero.mp4" type="video/mp4"/>
+</video>
+</div>
+<div class="hero-left">
+<div class="hero-eyebrow">
+<div class="hero-line"></div>
+<span>Private Transfers · Dubrovnik</span>
+</div>
+<!-- GOOGLE REVIEWS BADGE -->
+<div class="hero-reviews">
+<svg class="google-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"></path>
+<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path>
+</svg>
+<div class="hero-reviews-stars">
+<span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+</div>
+<div class="hero-reviews-text"><strong>4.9</strong> · 50+ Google reviews</div>
+</div>
+<h1>
+      Travel in<br/>
+<em>royal</em><br/>
+<strong>style</strong>
+</h1>
+<p class="hero-sub">Travel safely, comfortably and reliably to your destination. Private transfers, excursions and transport in Dubrovnik — available 24/7.</p>
+<div class="hero-actions">
+<a class="btn-primary" href="/en/kontakt">
+        Book a Transfer
+        <svg fill="none" height="14" viewbox="0 0 16 16" width="14"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
+</a>
+<a class="btn-ghost" href="/en/usluge">Our Services</a>
+</div>
+<div class="hero-badge">
+<div class="hero-badge-item">
+<div class="hero-badge-num">10+</div>
+<div class="hero-badge-label">Years of Experience</div>
+</div>
+<div class="hero-badge-divider"></div>
+<div class="hero-badge-item">
+<div class="hero-badge-num">0–24</div>
+<div class="hero-badge-label">Availability</div>
+</div>
+<div class="hero-badge-divider"></div>
+<div class="hero-badge-item">
+<div class="hero-badge-num">4.9★</div>
+<div class="hero-badge-label">Guest Rating</div>
+</div>
+<div class="hero-badge-divider"></div>
+<div class="hero-badge-item">
+<div class="hero-badge-num">100%</div>
+<div class="hero-badge-label">Satisfied Clients</div>
+</div>
+</div>
+</div>
+<div class="hero-scroll"><div class="scroll-line"></div>Scroll</div>
+</section>
+<!-- INTRO STRIP -->
+<div class="intro-strip reveal">
+<p>"Every transfer is built on trust, punctuality and genuine care for your journey."</p>
+<span>Emili Royal Transfers · Since 2014</span>
+</div>
+<!-- MARQUEE -->
+<div class="marquee-section">
+<div class="marquee-track">
+<span class="marquee-item"><span class="marquee-dot"></span>Airport Transfer</span>
+<span class="marquee-item"><span class="marquee-dot"></span>City Transfers</span>
+<span class="marquee-item"><span class="marquee-dot"></span>Split · Mostar · Kotor</span>
+<span class="marquee-item"><span class="marquee-dot"></span>Boat Excursions</span>
+<span class="marquee-item"><span class="marquee-dot"></span>Boat Excursions</span>
+<span class="marquee-item"><span class="marquee-dot"></span>Private Excursions</span>
+<span class="marquee-item"><span class="marquee-dot"></span>Fixed Prices</span>
+<span class="marquee-item"><span class="marquee-dot"></span>Airport Transfer</span>
+<span class="marquee-item"><span class="marquee-dot"></span>City Transfers</span>
+<span class="marquee-item"><span class="marquee-dot"></span>Split · Mostar · Kotor</span>
+<span class="marquee-item"><span class="marquee-dot"></span>Boat Excursions</span>
+<span class="marquee-item"><span class="marquee-dot"></span>Boat Excursions</span>
+<span class="marquee-item"><span class="marquee-dot"></span>Private Excursions</span>
+<span class="marquee-item"><span class="marquee-dot"></span>Fixed Prices</span>
+</div>
+</div>
+<!-- WHY US -->
+<section class="why-section">
+<div class="section-tag reveal">Why Choose Us</div>
+<h2 class="section-title reveal reveal-delay-1">Setting the Standard<br/>for Luxury <em>Transport</em></h2>
+<div class="why-grid">
+<div class="why-card reveal">
+<span class="why-card-icon">🚗</span>
+<div class="why-card-num">10+</div>
+<div class="why-card-title">Premium Vehicles</div>
+<div class="why-card-text">Carefully selected premium vehicles for outstanding comfort throughout your journey.</div>
+</div>
+<div class="why-card reveal reveal-delay-1">
+<span class="why-card-icon">⭐</span>
+<div class="why-card-num">10+</div>
+<div class="why-card-title">Years of Experience</div>
+<div class="why-card-text">Over a decade of reliable transfers for holidaymakers and business travellers in Dubrovnik.</div>
+</div>
+<div class="why-card reveal reveal-delay-2">
+<span class="why-card-icon">🎩</span>
+<div class="why-card-num">100%</div>
+<div class="why-card-title">Professional Drivers</div>
+<div class="why-card-text">Experienced, courteous and friendly drivers who speak English, Italian and Croatian.</div>
+</div>
+<div class="why-card reveal reveal-delay-3">
+<span class="why-card-icon">🕐</span>
+<div class="why-card-num">24/7</div>
+<div class="why-card-title">Always Available</div>
+<div class="why-card-text">Bookings and support 24 hours a day, 365 days a year. Whenever you need us.</div>
+</div>
+</div>
+</section>
+<!-- SERVICES -->
+<section class="services">
+<div class="services-header">
+<div>
+<div class="section-tag reveal">Services</div>
+<h2 class="section-title reveal reveal-delay-1">What We Offer</h2>
+</div>
+<a class="btn-ghost reveal reveal-delay-2" href="/en/usluge">All Services →</a>
+</div>
+<div class="services-list">
+<a aria-label="Learn more about airport transfers" class="service-row reveal" href="/en/usluge#airport-transfer">
+<div class="service-row-num">01</div>
+<h3>Airport Transfers</h3>
+<p>We track your flight and wait for you even if your arrival time changes. Your driver will greet you with a name sign.</p>
+<div aria-hidden="true" class="service-row-arrow">→</div>
+</a>
+<a aria-label="Learn more about city transfers" class="service-row reveal reveal-delay-1" href="/en/usluge#city-transfer">
+<div class="service-row-num">02</div>
+<h3>City Transfers</h3>
+<p>Comfortable private transport in Dubrovnik and the surrounding area. Ideal for visitors.</p>
+<div aria-hidden="true" class="service-row-arrow">→</div>
+</a>
+<a aria-label="Learn more about intercity transfers" class="service-row reveal reveal-delay-2" href="/en/usluge#intercity-transfer">
+<div class="service-row-num">03</div>
+<h3>Intercity Transfers</h3>
+<p>Split, Mostar, Kotor and beyond — enjoy a private journey on your own schedule.</p>
+<div aria-hidden="true" class="service-row-arrow">→</div>
+</a>
+<a aria-label="Learn more about boat excursions" class="service-row reveal reveal-delay-3" href="/en/usluge#boat-trips">
+<div class="service-row-num">04</div>
+<h3>Boat Excursions</h3>
+<p>Explore the Elaphiti Islands, hidden coves and untouched beaches near Dubrovnik.</p>
+<div aria-hidden="true" class="service-row-arrow">→</div>
+</a>
+</div>
+</section>
+<!-- DESTINACIJE TEASER -->
+<section class="destination-teaser">
+<div class="destination-teaser-head">
+<div>
+<div class="section-tag reveal">Destinations</div>
+<h2 class="section-title reveal reveal-delay-1">Popular Routes<br/><em>from Dubrovnik</em></h2>
+</div>
+<div class="destination-teaser-copy reveal reveal-delay-2">
+<p class="section-sub">Private transfers and scenic drives to sought-after destinations: Dubrovnik, panoramic viewpoints, Mostar, Kravice and Montenegro.</p>
+<a class="btn-ghost" href="/en/destinacije" style="margin-top:1.4rem;">Explore Destinations →</a>
+</div>
+</div>
+<div class="destination-mini-grid reveal reveal-delay-3">
+<a class="destination-mini-card" href="/en/destinacije#dubrovnik">
+<img alt="Private transfer in Dubrovnik" decoding="async" loading="lazy" src="/destinations/dubrovnik-05.avif"/>
+<div class="destination-mini-content"><span>01</span><h3>Dubrovnik</h3></div>
+</a>
+<a class="destination-mini-card" href="/en/destinacije#panorama">
+<img alt="Panoramic view of Dubrovnik" decoding="async" loading="lazy" src="/destinations/panorama-02.avif"/>
+<div class="destination-mini-content"><span>02</span><h3>Panoramic Tour</h3></div>
+</a>
+<a class="destination-mini-card" href="/en/destinacije#mostar">
+<img alt="Private excursion to Mostar" decoding="async" loading="lazy" src="/destinations/mostar-11.avif"/>
+<div class="destination-mini-content"><span>03</span><h3>Mostar</h3></div>
+</a>
+<a class="destination-mini-card" href="/en/destinacije#montenegro">
+<img alt="Montenegro Kotor transfer" decoding="async" loading="lazy" src="/destinations/kotor-02.avif"/>
+<div class="destination-mini-content"><span>04</span><h3>Montenegro</h3></div>
+</a>
+</div>
+</section>
+<!-- SPLIT -->
+<section class="split">
+<div class="split-grid">
+<div class="split-img reveal">
+<img alt="Dubrovnik private transfer" src="/dolazak.jpg"/>
+</div>
+<div class="split-content">
+<div class="section-tag reveal">Why Choose Us</div>
+<h2 class="section-title reveal reveal-delay-1">Your Trust<br/>Is Our Priority</h2>
+<p class="reveal reveal-delay-2">We have provided private transport for more than a decade. <strong>Our aim is to make every journey a pleasure</strong> — from your first enquiry to arrival at your destination.</p>
+<div class="reasons">
+<div class="reason reveal reveal-delay-2">
+<span class="reason-icon">✦</span>
+<div>
+<h4>Fixed Prices, No Surprises</h4>
+<p>Agree on the price in advance. No hidden charges or unexpected extras.</p>
+</div>
+</div>
+<div class="reason reveal reveal-delay-3">
+<span class="reason-icon">✦</span>
+<div>
+<h4>Punctual and Reliable</h4>
+<p>We are where you need us, when you need us. We monitor flight arrivals in real time.</p>
+</div>
+</div>
+<div class="reason reveal reveal-delay-4">
+<span class="reason-icon">✦</span>
+<div>
+<h4>Available 24/7, All Year</h4>
+<p>Late-night arrival or early-morning transfer — we are here whenever you travel.</p>
+</div>
+</div>
+</div>
+<a class="btn-primary reveal reveal-delay-4" href="/en/kontakt" style="margin-top:1rem; align-self:flex-start;">
+        Book Now →
+      </a>
+</div>
+</div>
+</section>
+<!-- GALERIJA -->
+<section class="gallery-section">
+<div class="section-tag reveal">Gallery</div>
+<h2 class="section-title reveal reveal-delay-1">Comfort and<br/><em>Luxury</em> Every Step of the Way</h2>
+<div class="gallery-grid reveal reveal-delay-2">
+<div class="gallery-item gallery-item--tall">
+<img alt="Passenger in a luxury vehicle" src="/putnik1.jpg"/>
+</div>
+<div class="gallery-item">
+<img alt="Professional driver" src="/vozac.jpg"/>
+</div>
+<div class="gallery-item">
+<img alt="Luxury vehicle interior" src="/unutrasnjost.jpg"/>
+</div>
+<div class="gallery-item gallery-item--wide">
+<img alt="Comfortable private transfer" src="/putnik2.jpg"/>
+</div>
+</div>
+</section>
+<section class="testimonials">
+<div class="section-tag reveal">Reviews</div>
+<h2 class="section-title reveal reveal-delay-1">What Our Guests Say</h2>
+<div class="testimonials-grid">
+<div class="testimonial-card reveal">
+<div class="t-stars">★★★★★</div>
+<p class="t-text">"Exceptionally professional service. The driver was punctual, friendly and helped with our luggage. We would recommend them to anyone visiting Dubrovnik."</p>
+<div class="t-author">
+<div class="t-avatar">MS</div>
+<div>
+<div class="t-name">Maria S.</div>
+<div class="t-place">Frankfurt · Google review</div>
+</div>
+</div>
+</div>
+<div class="testimonial-card reveal reveal-delay-1">
+<div class="t-stars">★★★★★</div>
+<p class="t-text">"Perfect service! Driver was waiting at the airport with a sign, helped with luggage, and got us to the hotel quickly. Will definitely book again."</p>
+<div class="t-author">
+<div class="t-avatar">JK</div>
+<div>
+<div class="t-name">James K.</div>
+<div class="t-place">London · TripAdvisor</div>
+</div>
+</div>
+</div>
+<div class="testimonial-card reveal reveal-delay-2">
+<div class="t-stars">★★★★★</div>
+<p class="t-text">"We booked a trip to Mostar. Our driver was an excellent guide and recommended where to eat and what to see. A fantastic experience!"</p>
+<div class="t-author">
+<div class="t-avatar">AP</div>
+<div>
+<div class="t-name">Ana P.</div>
+<div class="t-place">Zagreb · Google review</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA -->
+<div class="cta-section">
+<div class="cta-img">
+<img alt="Dubrovnik coastline" src="/more.jpg"/>
+</div>
+<div class="cta-content">
+<div class="section-tag reveal">Contact</div>
+<h2 class="reveal reveal-delay-1">Plan Your<br/><em>Journey</em></h2>
+<p class="reveal reveal-delay-2">Fill in the form or contact us directly. We respond within an hour and provide a free quote.</p>
+<div class="cta-btns reveal reveal-delay-3">
+<a class="btn-primary" href="/en/kontakt">Request a Quote →</a>
+<a class="whatsapp-btn" href="https://wa.me/385913240003" target="_blank">
+<svg fill="currentColor" height="15" viewbox="0 0 24 24" width="15"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
+        WhatsApp
+      </a>
+</div>
+</div>
+</div>
+<!-- FOOTER -->
+<footer>
+<div class="footer-top">
+<div class="footer-brand">
+<a class="logo-wrap" href="/en/"><img alt="Emili Royal Transfers" class="logo-img" src="/logo.png"/></a>
+<p>Safe, comfortable and reliable journeys. Available 24/7, 365 days a year.</p>
+</div>
+<div class="footer-col">
+<h4>Explore</h4>
+<ul>
+<li><a href="/en/">Home</a></li>
+<li><a href="/en/usluge">Services</a></li>
+<li><a href="/en/destinacije">Destinations</a></li>
+<li><a href="/en/o-nama">About Us</a></li>
+<li><a href="/en/kontakt">Contact</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Services</h4>
+<ul>
+<li><a href="/en/usluge">Airport transfer</a></li>
+<li><a href="/en/usluge">City Transfers</a></li>
+<li><a href="/en/usluge">Intercity Transfer</a></li>
+<li><a href="/en/destinacije">Destinations &amp; Excursions</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Contact</h4>
+<ul>
+<li><a href="https://wa.me/385913240003">+385 91 3240003</a></li>
+<li><a href="mailto:miran10021994@gmail.com">miran10021994@gmail.com</a></li>
+<li><a href="#">Dubrovnik, Croatia</a></li>
+<li><a href="#">Fixed Prices</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<div class="footer-bottom-meta">
+<p>© 2026 Emili Royal Transfers. All rights reserved.</p>
+<p>Od Nuncijate 10, 20000 Dubrovnik</p>
+</div>
+<div aria-label="Legal information" class="footer-legal-links">
+<a href="/en/politika-privatnosti">Privacy</a>
+<a href="/en/politika-kolacica">Cookies</a>
+<a href="/en/pravne-napomene">Legal Notice</a>
+<button data-cookie-settings="" type="button">Cookie Settings</button>
+</div>
+</div>
+</footer>
+<script src="/main.js"></script>
+</body>
+</html>

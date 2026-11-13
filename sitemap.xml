@@ -1,33 +1,101 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<?xml version='1.0' encoding='utf-8'?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://emiliroyal-transfers.com/</loc>
-    <lastmod>2026-09-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-11-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://emiliroyal-transfers.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://emiliroyal-transfers.com/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emiliroyal-transfers.com/" />
   </url>
   <url>
-    <loc>https://emiliroyal-transfers.com/o-nama</loc>
-    <lastmod>2026-09-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://emiliroyal-transfers.com/en/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://emiliroyal-transfers.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://emiliroyal-transfers.com/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emiliroyal-transfers.com/" />
   </url>
   <url>
     <loc>https://emiliroyal-transfers.com/usluge</loc>
-    <lastmod>2026-09-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-11-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://emiliroyal-transfers.com/usluge" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://emiliroyal-transfers.com/en/usluge" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emiliroyal-transfers.com/usluge" />
+  </url>
+  <url>
+    <loc>https://emiliroyal-transfers.com/en/usluge</loc>
+    <lastmod>2026-11-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://emiliroyal-transfers.com/usluge" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://emiliroyal-transfers.com/en/usluge" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emiliroyal-transfers.com/usluge" />
   </url>
   <url>
     <loc>https://emiliroyal-transfers.com/destinacije</loc>
-    <lastmod>2026-09-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-11-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://emiliroyal-transfers.com/destinacije" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://emiliroyal-transfers.com/en/destinacije" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emiliroyal-transfers.com/destinacije" />
+  </url>
+  <url>
+    <loc>https://emiliroyal-transfers.com/en/destinacije</loc>
+    <lastmod>2026-11-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://emiliroyal-transfers.com/destinacije" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://emiliroyal-transfers.com/en/destinacije" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emiliroyal-transfers.com/destinacije" />
+  </url>
+  <url>
+    <loc>https://emiliroyal-transfers.com/o-nama</loc>
+    <lastmod>2026-11-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://emiliroyal-transfers.com/o-nama" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://emiliroyal-transfers.com/en/o-nama" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emiliroyal-transfers.com/o-nama" />
+  </url>
+  <url>
+    <loc>https://emiliroyal-transfers.com/en/o-nama</loc>
+    <lastmod>2026-11-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://emiliroyal-transfers.com/o-nama" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://emiliroyal-transfers.com/en/o-nama" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emiliroyal-transfers.com/o-nama" />
   </url>
   <url>
     <loc>https://emiliroyal-transfers.com/kontakt</loc>
-    <lastmod>2026-09-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-11-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://emiliroyal-transfers.com/kontakt" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://emiliroyal-transfers.com/en/kontakt" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emiliroyal-transfers.com/kontakt" />
+  </url>
+  <url>
+    <loc>https://emiliroyal-transfers.com/en/kontakt</loc>
+    <lastmod>2026-11-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://emiliroyal-transfers.com/kontakt" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://emiliroyal-transfers.com/en/kontakt" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emiliroyal-transfers.com/kontakt" />
+  </url>
+  <url>
+    <loc>https://emiliroyal-transfers.com/politika-privatnosti</loc>
+    <lastmod>2026-11-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://emiliroyal-transfers.com/politika-privatnosti" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://emiliroyal-transfers.com/en/politika-privatnosti" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emiliroyal-transfers.com/politika-privatnosti" />
+  </url>
+  <url>
+    <loc>https://emiliroyal-transfers.com/en/politika-privatnosti</loc>
+    <lastmod>2026-11-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://emiliroyal-transfers.com/politika-privatnosti" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://emiliroyal-transfers.com/en/politika-privatnosti" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emiliroyal-transfers.com/politika-privatnosti" />
+  </url>
+  <url>
+    <loc>https://emiliroyal-transfers.com/pravne-napomene</loc>
+    <lastmod>2026-11-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://emiliroyal-transfers.com/pravne-napomene" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://emiliroyal-transfers.com/en/pravne-napomene" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emiliroyal-transfers.com/pravne-napomene" />
+  </url>
+  <url>
+    <loc>https://emiliroyal-transfers.com/en/pravne-napomene</loc>
+    <lastmod>2026-11-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://emiliroyal-transfers.com/pravne-napomene" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://emiliroyal-transfers.com/en/pravne-napomene" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emiliroyal-transfers.com/pravne-napomene" />
   </url>
 </urlset>

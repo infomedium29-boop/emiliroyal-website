@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<link href="/favicon.png" rel="icon" type="image/png"/>
+<link href="/favicon.png" rel="apple-touch-icon"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Book a Private Transfer in Dubrovnik | Emili Royal Transfers</title>
+<meta content="Send a booking request for a private transfer in Dubrovnik. Contact us via WhatsApp, email or our enquiry form. We aim to reply within one hour." name="description"/>
+<link href="https://emiliroyal-transfers.com/en/kontakt" rel="canonical"/>
+<meta content="index, follow" name="robots"/>
+<link href="/style.css" rel="stylesheet"/>
+<style>
+  .contact-section { background: var(--bg); }
+  .contact-layout { display:grid; grid-template-columns:1fr 1.3fr; gap:5rem; align-items:start; }
+
+  .contact-methods { display:flex; flex-direction:column; gap:0; margin-top:2.5rem; }
+  .contact-method { display:flex; gap:1.2rem; align-items:flex-start; padding:1.5rem 0; border-bottom:1px solid var(--border2); transition:padding-left 0.3s, color 0.2s; cursor:none; text-decoration:none; color:inherit; }
+  .contact-method:first-child { border-top:1px solid var(--border2); }
+  .contact-method:hover { padding-left:0.5rem; }
+  a.contact-method:focus-visible { outline:2px solid var(--gold); outline-offset:4px; }
+  .contact-method-icon { width:40px; height:40px; border:1px solid rgba(154,123,60,0.25); display:flex; align-items:center; justify-content:center; font-size:0.95rem; flex-shrink:0; color:var(--gold); transition:box-shadow 0.3s; }
+  .contact-method:hover .contact-method-icon { box-shadow:0 4px 20px rgba(154,123,60,0.12); }
+  .contact-method-label { font-size:0.68rem; font-weight:400; letter-spacing:0.15em; text-transform:uppercase; color:var(--muted); margin-bottom:0.2rem; }
+  .contact-method-value { font-size:0.92rem; color:var(--text); }
+  .contact-method-note { font-size:0.78rem; color:var(--muted); margin-top:0.1rem; }
+
+  .contact-form-wrap { background:var(--bg2); border:1px solid var(--border2); padding:3rem; position:relative; overflow:hidden; }
+  .contact-form-wrap h3 { font-family:'Cormorant Garamond',serif; font-size:1.6rem; font-weight:400; margin-bottom:0.4rem; }
+  .contact-form-wrap > p { font-size:0.95rem; color:var(--text2); line-height:1.7; margin-bottom:2rem; }
+  .contact-form { display:flex; flex-direction:column; gap:1rem; }
+  .form-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+  .form-group { display:flex; flex-direction:column; gap:0.4rem; }
+  .form-group label { font-size:0.78rem; font-weight:500; letter-spacing:0.11em; text-transform:uppercase; color:var(--text2); font-family:'DM Sans',sans-serif; }
+  .form-group input, .form-group textarea, .form-group select {
+    background:#fffdf9; border:1px solid rgba(26,24,18,0.18); color:var(--text);
+    font-family:'DM Sans',sans-serif; font-size:0.98rem; padding:0.95rem 1rem; min-height:50px;
+    border-radius:0; outline:none; transition:border-color 0.2s, box-shadow 0.2s, background 0.2s; cursor:none; width:100%;
+  }
+  .form-group input::placeholder, .form-group textarea::placeholder { color:#6f675a; opacity:0.82; }
+  .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color:rgba(154,123,60,0.75); box-shadow:0 0 0 3px rgba(154,123,60,0.09); background:#fff; }
+  .form-group textarea { resize:vertical; min-height:120px; }
+  .form-group select option { background:var(--bg2); }
+  .form-submit { background:var(--text); color:var(--bg); font-family:'DM Sans',sans-serif; font-weight:500; font-size:0.78rem; letter-spacing:0.14em; text-transform:uppercase; padding:1rem 2rem; border:none; cursor:none; display:flex; align-items:center; justify-content:center; gap:0.5rem; transition:background 0.2s; margin-top:0.5rem; width:100%; }
+  .form-submit:hover { background:var(--gold); }
+  .form-note { font-size:0.82rem; color:var(--text2); text-align:center; margin-top:0.55rem; }
+  .form-status { min-height:1.2em; margin:0.2rem 0 0; text-align:center; font-size:0.86rem; color:var(--text2); }
+  .form-status.is-error { color:#a64242; }
+  .form-submit:disabled { cursor:not-allowed; }
+
+  .form-success { display:none; text-align:center; padding:3rem 1rem; }
+  .form-success.show { display:block; }
+  .form-success h3 { font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:400; margin-bottom:0.5rem; }
+  .form-success p { color:var(--text2); font-size:0.96rem; }
+  .form-success .gold-icon { font-size:2rem; margin-bottom:1rem; color:var(--gold); }
+
+  .whatsapp-cta { background:var(--bg2); border-top:1px solid var(--border2); padding:4rem; display:flex; align-items:center; justify-content:space-between; gap:2rem; flex-wrap:wrap; }
+  .whatsapp-cta h3 { font-family:'Cormorant Garamond',serif; font-size:1.8rem; font-weight:400; }
+  .whatsapp-cta p { color:var(--muted); font-size:0.88rem; margin-top:0.3rem; }
+  .whatsapp-big { display:inline-flex; align-items:center; gap:0.8rem; background:#25d366; color:#fff; font-family:'DM Sans',sans-serif; font-weight:600; font-size:0.82rem; letter-spacing:0.1em; text-transform:uppercase; padding:1rem 2rem; text-decoration:none; cursor:none; transition:opacity 0.2s; }
+  .whatsapp-big:hover { opacity:0.9; }
+
+  @media (max-width:900px) {
+    .contact-layout { grid-template-columns:1fr; gap:3rem; }
+    .form-row { grid-template-columns:1fr; }
+    .contact-form-wrap { padding:2rem 1.5rem; }
+    .whatsapp-cta { padding:3rem 1.5rem; flex-direction:column; }
+  }
+</style>
+<link href="https://emiliroyal-transfers.com/kontakt" hreflang="hr" rel="alternate"/><link href="https://emiliroyal-transfers.com/en/kontakt" hreflang="en" rel="alternate"/><link href="https://emiliroyal-transfers.com/kontakt" hreflang="x-default" rel="alternate"/><meta content="website" property="og:type"/><meta content="Emili Royal Transfers" property="og:site_name"/><meta content="en_GB" property="og:locale"/><meta content="Book a Private Transfer in Dubrovnik | Emili Royal Transfers" property="og:title"/><meta content="Send a booking request for a private transfer in Dubrovnik. Contact us via WhatsApp, email or our enquiry form. We aim to reply within one hour." property="og:description"/><meta content="https://emiliroyal-transfers.com/en/kontakt" property="og:url"/><meta content="summary" name="twitter:card"/></head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-follower" id="cursorFollower"></div>
+<nav id="navbar">
+<a class="logo-wrap" href="/en/"><img alt="Emili Royal Transfers" class="logo-img" src="/logo.png"/></a>
+<ul class="nav-links">
+<li><a href="/en/">Home</a></li>
+<li><a href="/en/usluge">Services</a></li>
+<li><a href="/en/destinacije">Destinations</a></li>
+<li><a href="/en/o-nama">About Us</a></li>
+<li><a class="nav-cta" href="/en/kontakt">Book Now</a></li>
+</ul>
+<div aria-label="Choose language" class="language-switch" role="group"><a aria-label="Hrvatski" class="lang-option" href="/kontakt" hreflang="hr" lang="hr">HR</a><a aria-current="page" aria-label="English" class="lang-option is-active" href="/en/kontakt" hreflang="en" lang="en">EN</a></div><button aria-controls="mobileMenu" aria-expanded="false" aria-label="Open menu" class="hamburger" id="hamburger">
+<span></span><span></span><span></span>
+</button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+<ul class="mobile-menu-links">
+<li><a href="/en/">Home</a></li>
+<li><a href="/en/usluge">Services</a></li>
+<li><a href="/en/destinacije">Destinations</a></li>
+<li><a href="/en/o-nama">About Us</a></li>
+<li><a href="/en/kontakt">Contact</a></li>
+</ul>
+<div class="mobile-menu-cta"><a href="/en/kontakt">Book Now</a></div>
+</div>
+<div class="page-hero page-hero--img" style="background-image: url('/dolazak.jpg');">
+<div class="page-hero-overlay"></div>
+<div class="page-hero-line"></div>
+<div class="page-hero-tag">Bookings</div>
+<h1>Book<br/>Your <em>Transfer</em></h1>
+<p class="page-hero-sub">Complete the form or contact us directly. We respond within an hour.</p>
+</div>
+<!-- CONTACT -->
+<section class="contact-section">
+<div class="contact-layout">
+<div class="contact-left">
+<div class="section-tag reveal">Contact</div>
+<h2 class="section-title reveal reveal-delay-1" style="font-size:clamp(1.8rem,3vw,2.8rem);">Here for You<br/>Anytime</h2>
+<div class="contact-methods reveal reveal-delay-2">
+<a aria-label="Start a WhatsApp chat with Emili Royal Transfers" class="contact-method" href="https://wa.me/385913240003" rel="noopener noreferrer" target="_blank">
+<div class="contact-method-icon">📱</div>
+<div>
+<div class="contact-method-label">WhatsApp</div>
+<div class="contact-method-value">+385 91 3240003</div>
+<div class="contact-method-note">Fastest Way to Reach Us</div>
+</div>
+</a>
+<a aria-label="Email Emili Royal Transfers" class="contact-method" href="mailto:miran10021994@gmail.com">
+<div class="contact-method-icon">✉</div>
+<div>
+<div class="contact-method-label">Email</div>
+<div class="contact-method-value">miran10021994@gmail.com</div>
+<div class="contact-method-note">We Reply Within an Hour</div>
+</div>
+</a>
+<a aria-label="Open location in Google Maps" class="contact-method" href="https://www.google.com/maps/search/?api=1&amp;query=Ulica+od+Nuncijate%2C+Dubrovnik%2C+Hrvatska" rel="noopener noreferrer" target="_blank">
+<div class="contact-method-icon">📍</div>
+<div>
+<div class="contact-method-label">Location</div>
+<div class="contact-method-value">Dubrovnik, Croatia</div>
+<div class="contact-method-note">Od Nuncijate Street</div>
+</div>
+</a>
+<div class="contact-method">
+<div class="contact-method-icon">🕐</div>
+<div>
+<div class="contact-method-label">Availability</div>
+<div class="contact-method-value">Mon — Sun, 24 Hours</div>
+<div class="contact-method-note">365 Days a Year</div>
+</div>
+</div>
+</div>
+</div>
+<div class="reveal reveal-delay-2">
+<div class="contact-form-wrap">
+<h3>Send an Enquiry</h3>
+<p>Complete the form and we will get back to you as soon as possible.</p>
+<form class="contact-form" id="contactForm" novalidate="">
+<input aria-hidden="true" autocomplete="off" name="botcheck" style="display:none" tabindex="-1" type="checkbox"/>
+<div class="form-row">
+<div class="form-group"><label for="contactName">Full Name *</label><input autocomplete="name" id="contactName" maxlength="100" name="name" placeholder="Your name" required="" type="text"/></div>
+<div class="form-group"><label for="contactEmail">Email *</label><input autocomplete="email" id="contactEmail" maxlength="160" name="email" placeholder="you@example.com" required="" type="email"/></div>
+</div>
+<div class="form-row">
+<div class="form-group"><label for="contactPhone">Phone / WhatsApp</label><input autocomplete="tel" id="contactPhone" maxlength="50" name="phone" placeholder="+385 ..." type="tel"/></div>
+<div class="form-group"><label for="contactPassengers">Number of Passengers</label>
+<select id="contactPassengers" name="passengers"><option>1 Passenger</option><option>2 Passengers</option><option>3–4 Passengers</option><option>5–6 Passengers</option><option>7+ Passengers</option></select>
+</div>
+</div>
+<div class="form-group"><label for="contactService">Service Type *</label>
+<select id="contactService" name="service" required="">
+<option value="">Select a Service</option>
+<option>Airport Transfer</option>
+<option>City Transfer — Dubrovnik</option>
+<option>Intercity Transfer</option>
+<option>Boat Excursion</option>
+<option>Other</option>
+</select>
+</div>
+<div class="form-row">
+<div class="form-group"><label for="contactDate">Travel Date</label><input id="contactDate" name="travel_date" type="date"/></div>
+<div class="form-group"><label for="contactTime">Preferred Time</label><input id="contactTime" name="travel_time" type="time"/></div>
+</div>
+<div class="form-group"><label for="contactMessage">Message / Route Details</label><textarea id="contactMessage" maxlength="3000" name="message" placeholder="Tell us your route, requests or questions..."></textarea></div>
+<button class="form-submit" id="submitBtn" type="submit">
+<span id="submitBtnText">Send Booking Request</span>
+<svg fill="none" height="14" viewbox="0 0 16 16" width="14"><path d="M2 8h12M10 4l4 4-4 4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
+</button>
+<div class="form-privacy-notice">
+<span aria-hidden="true">i</span>
+<p>By submitting this form, you are sending a booking enquiry. We use your details to respond and arrange the service. Your booking is only confirmed once we contact you with confirmation. Learn more in our <a href="/en/politika-privatnosti">Privacy Policy</a>.</p>
+</div>
+<p class="form-note">* Required Fields</p>
+<p aria-live="polite" class="form-status" id="formStatus" role="status"></p>
+</form>
+<div class="form-success" id="formSuccess">
+<div class="gold-icon">✦</div>
+<h3>Enquiry Received!</h3>
+<p>We Will Contact You Within an Hour.<br/>Thank you for contacting Emili Royal Transfers.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- WHATSAPP -->
+<div class="whatsapp-cta">
+<div>
+<h3>Prefer WhatsApp?</h3>
+<p>Message us directly for the fastest response.</p>
+</div>
+<a class="whatsapp-big" href="https://wa.me/385913240003" target="_blank">
+<svg fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
+    Message on WhatsApp
+  </a>
+</div>
+<!-- FOOTER -->
+<footer>
+<div class="footer-top">
+<div class="footer-brand">
+<a class="logo-wrap" href="/en/"><img alt="Emili Royal Transfers" class="logo-img" src="/logo.png"/></a>
+<p>Safe, comfortable and reliable journeys. Available 24/7, 365 days a year.</p>
+</div>
+<div class="footer-col">
+<h4>Explore</h4>
+<ul>
+<li><a href="/en/">Home</a></li>
+<li><a href="/en/usluge">Services</a></li>
+<li><a href="/en/destinacije">Destinations</a></li>
+<li><a href="/en/o-nama">About Us</a></li>
+<li><a href="/en/kontakt">Contact</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Services</h4>
+<ul>
+<li><a href="/en/usluge">Airport transfer</a></li>
+<li><a href="/en/usluge">City Transfers</a></li>
+<li><a href="/en/usluge">Intercity Transfer</a></li>
+<li><a href="/en/destinacije">Destinations &amp; Excursions</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Contact</h4>
+<ul>
+<li><a href="https://wa.me/385913240003">+385 91 3240003</a></li>
+<li><a href="mailto:miran10021994@gmail.com">miran10021994@gmail.com</a></li>
+<li><a href="#">Dubrovnik, Croatia</a></li>
+<li><a href="#">Available 24/7</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<div class="footer-bottom-meta">
+<p>© 2026 Emili Royal Transfers. All rights reserved.</p>
+<p>Od Nuncijate 10, 20000 Dubrovnik</p>
+</div>
+<div aria-label="Legal information" class="footer-legal-links">
+<a href="/en/politika-privatnosti">Privacy</a>
+<a href="/en/politika-kolacica">Cookies</a>
+<a href="/en/pravne-napomene">Legal Notice</a>
+<button data-cookie-settings="" type="button">Cookie Settings</button>
+</div>
+</div>
+</footer>
+<script src="/main.js"></script>
+<script>
+(function () {
+  const form = document.getElementById('contactForm');
+  const btn = document.getElementById('submitBtn');
+  const btnText = document.getElementById('submitBtnText');
+  const status = document.getElementById('formStatus');
+  const success = document.getElementById('formSuccess');
+
+  if (!form) return;
+
+  form.addEventListener('submit', async function (event) {
+    event.preventDefault();
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    btn.disabled = true;
+    btn.style.opacity = '0.7';
+    btnText.textContent = 'Sending...';
+    status.textContent = '';
+    status.classList.remove('is-error');
+
+    const data = Object.fromEntries(new FormData(form).entries());
+
+    try {
+      // Access key ostaje spremljen u Cloudflareu, ali se sama rezervacija
+      // šalje direktno iz preglednika prema Web3Forms kako se ne bi dijelio
+      // rate limit Cloudflare Pages Function proxyja.
+      const configResponse = await fetch('/api/form-config', {
+        method: 'GET',
+        headers: { 'Accept': 'application/json' },
+        cache: 'no-store'
+      });
+      const config = await configResponse.json().catch(function () { return {}; });
+
+      if (!configResponse.ok || !config.success || !config.access_key) {
+        throw new Error(config.message || 'The booking form is temporarily unavailable.');
+      }
+
+      const payload = {
+        access_key: config.access_key,
+        subject: 'New booking request — ' + data.service,
+        from_name: 'Emili Royal Transfers Web',
+        name: data.name || '',
+        email: data.email || '',
+        'Telefon / WhatsApp': data.phone || 'Nije navedeno',
+        'Broj putnika': data.passengers || 'Nije navedeno',
+        'Vrsta usluge': data.service || '',
+        'Datum putovanja': data.travel_date || 'Nije navedeno',
+        'Željeno vrijeme': data.travel_time || 'Nije navedeno',
+        message: data.message || 'Nema dodatne poruke.',
+        botcheck: data.botcheck || ''
+      };
+
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      });
+
+      const result = await response.json().catch(function () { return {}; });
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || 'Your request could not be sent.');
+      }
+
+      form.reset();
+      form.style.display = 'none';
+      success.classList.add('show');
+    } catch (error) {
+      status.textContent = 'Your request was not sent. Please try again or contact us on WhatsApp.';
+      status.classList.add('is-error');
+      btn.disabled = false;
+      btn.style.opacity = '1';
+      btnText.textContent = 'Send Booking Request';
+    }
+  });
+})();
+</script>
+</body>
+</html>

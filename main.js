@@ -59,12 +59,14 @@ reveals.forEach(function(el) { revealObserver.observe(el); });
   function closeMenu() {
     mobileMenu.classList.remove('open');
     hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
   }
 
   hamburger.addEventListener('click', function() {
     var isOpen = mobileMenu.classList.toggle('open');
     hamburger.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', String(isOpen));
     document.body.style.overflow = isOpen ? 'hidden' : '';
   });
 
@@ -149,6 +151,32 @@ reveals.forEach(function(el) { revealObserver.observe(el); });
           '<div class="cookie-modal-actions"><a href="/politika-kolacica">Pročitaj Politiku kolačića</a><button class="cookie-btn cookie-btn--primary" type="button" data-cookie-close>Gotovo</button></div>' +
         '</div>' +
       '</div>';
+
+    if (document.documentElement.lang === 'en') {
+      notice.setAttribute('aria-label', 'Cookie information');
+      notice.innerHTML =
+        '<div class="cookie-notice-inner">' +
+          '<div><div class="cookie-notice-kicker">Privacy</div>' +
+            '<h2>Cookies and browser storage</h2>' +
+            '<p>This website currently does not use analytics or marketing cookies. We only use essential local storage to remember this notice. Learn more in our <a href="/en/politika-kolacica">Cookie Policy</a>.</p>' +
+          '</div><div class="cookie-notice-actions">' +
+            '<button class="cookie-btn" type="button" data-cookie-open>Details</button>' +
+            '<button class="cookie-btn cookie-btn--primary" type="button" data-cookie-ack>Got It</button>' +
+          '</div>' +
+        '</div>';
+      backdrop.innerHTML =
+        '<div class="cookie-modal" role="dialog" aria-modal="true" aria-labelledby="cookieModalTitle">' +
+          '<div class="cookie-modal-head"><div><span>Privacy Settings</span><h2 id="cookieModalTitle">Cookies on This Website</h2></div>' +
+            '<button class="cookie-close" type="button" aria-label="Close cookie settings" data-cookie-close>×</button></div>' +
+          '<div class="cookie-modal-body">' +
+            '<p>Emili Royal Transfers currently does not use analytics or advertising tools requiring optional cookies. If we introduce them, we will request your choice before activating them.</p>' +
+            '<div class="cookie-category"><div><strong>Essential Storage</strong><p>Used for essential website functions and to remember that you have read this notice. It is not used for tracking.</p></div><span class="cookie-state">Always Active</span></div>' +
+            '<div class="cookie-category"><div><strong>Analytics Cookies</strong><p>Tools that measure visits and visitor behaviour.</p></div><span class="cookie-state is-off">Not Used</span></div>' +
+            '<div class="cookie-category"><div><strong>Marketing Cookies</strong><p>Tools for personalised advertising and conversion tracking.</p></div><span class="cookie-state is-off">Not Used</span></div>' +
+            '<div class="cookie-modal-actions"><a href="/en/politika-kolacica">Read Cookie Policy</a><button class="cookie-btn cookie-btn--primary" type="button" data-cookie-close>Done</button></div>' +
+          '</div>' +
+        '</div>';
+    }
     document.body.appendChild(backdrop);
   }
 
