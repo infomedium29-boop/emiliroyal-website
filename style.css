@@ -760,3 +760,35 @@ footer { background: var(--bg2); border-top: 1px solid var(--border2); }
   #navbar .nav-actions .language-switch { padding: 2px; }
   #navbar .nav-actions .lang-option { min-width: 27px; padding: 8px 6px; }
 }
+
+
+/* M29 language-switch v3: independent page-level navigation fix */
+#navbar {gap:clamp(7px,1vw,15px);}
+#navbar .nav-links {min-width:0; flex:0 1 auto; margin-left:auto;}
+#navbar .nav-actions {display:flex!important; flex:0 0 auto; align-items:center; justify-content:flex-end; gap:9px; margin-left:clamp(4px,.65vw,12px); position:relative; z-index:10;}
+#navbar .nav-actions .language-switch {display:inline-flex!important; visibility:visible!important; opacity:1!important; position:relative!important; flex:0 0 auto!important; align-items:center!important; margin:0!important; white-space:nowrap!important; border-radius:12px; padding:3px; border:1px solid rgba(199,164,81,.35); background:rgba(255,255,255,.04);}
+#navbar .nav-actions .lang-option {display:inline-flex!important; align-items:center; justify-content:center; min-width:32px; height:34px; padding:0 8px; font:600 11px/1 'DM Sans',Arial,sans-serif; letter-spacing:.04em; text-decoration:none; border-radius:8px; color:rgba(255,255,255,.82); cursor:pointer;}
+#navbar .nav-actions .lang-option.is-active {background:linear-gradient(135deg,#dcc078,#b6903c); color:#1c180f!important;}
+#navbar .nav-actions .lang-option:not(.is-active):hover {background:rgba(255,255,255,.12); color:#fff;}
+#navbar .nav-actions .lang-option:focus-visible {outline:2px solid #dcc078; outline-offset:2px;}
+@media (min-width:901px) and (max-width:1150px) {
+  #navbar .nav-actions {gap:5px; margin-left:4px;}
+  #navbar .nav-actions .lang-option {min-width:26px; padding:0 6px; height:32px;}
+}
+@media (max-width:900px) {
+  #navbar .nav-links {display:none!important;}
+  #navbar .nav-actions {margin-left:auto; gap:7px;}
+  #navbar .nav-actions .hamburger {display:flex; flex-shrink:0;}
+}
+@media (max-width:420px) {
+  #navbar {gap:6px; padding-left:10px; padding-right:9px;}
+  #navbar .logo-wrap {min-width:0; padding:4px 5px;}
+  #navbar .logo-img {max-width:130px!important;}
+  #navbar .nav-actions {gap:5px;}
+  #navbar .nav-actions .language-switch {padding:2px;}
+  #navbar .nav-actions .lang-option {min-width:28px; height:32px; padding:0 6px; font-size:10px;}
+}
+@media (max-width:350px) {
+  #navbar .logo-img {max-width:112px!important;}
+  #navbar .nav-actions .lang-option {min-width:25px; padding:0 4px;}
+}

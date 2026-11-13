@@ -1,3 +1,56 @@
+
+// LANGUAGE SWITCH FALLBACK – survives older cached Croatian HTML pages.
+(function ensureLanguageSwitchOnEveryPage() {
+  var nav=document.getElementById('navbar');
+  if(!nav) return;
+  var raw=window.location.pathname||'/';
+  var normalized=raw.replace(/\/index\.html$/i,'/').replace(/\.html$/i,'').replace(/\/+$/,'')||'/';
+  var isEnglish=normalized==='/en'||normalized.indexOf('/en/')===0;
+  var route=isEnglish ? (normalized.slice(3)||'/') : normalized;
+  var valid=['/','/usluge','/destinacije','/o-nama','/kontakt','/politika-privatnosti','/politika-kolacica','/pravne-napomene'];
+  if(valid.indexOf(route)===-1) route='/';
+  var hrHref=route;
+  var enHref=route==='/' ? '/en/' : '/en'+route;
+  var wrapper=nav.querySelector('.nav-actions');
+  if(!wrapper){
+    wrapper=document.createElement('div');
+    wrapper.className='nav-actions';
+    var hamburger=nav.querySelector('#hamburger');
+    if(hamburger){nav.insertBefore(wrapper,hamburger);wrapper.appendChild(hamburger);}
+    else nav.appendChild(wrapper);
+  }
+  var switcher=nav.querySelector('.language-switch');
+  if(!switcher){
+    switcher=document.createElement('div');
+    switcher.className='language-switch';
+    switcher.setAttribute('role','group');
+    switcher.setAttribute('aria-label',isEnglish?'Choose language':'Odabir jezika');
+    var choices=[{href:hrHref,lang:'hr',name:'HR',label:'Hrvatski',active:!isEnglish},{href:enHref,lang:'en',name:'EN',label:'English',active:isEnglish}];
+    choices.forEach(function(choice){
+      var link=document.createElement('a');
+      link.className='lang-option'+(choice.active?' is-active':'');
+      link.href=choice.href;
+      link.hreflang=choice.lang;
+      link.lang=choice.lang;
+      link.textContent=choice.name;
+      link.setAttribute('aria-label',choice.label);
+      if(choice.active)link.setAttribute('aria-current','page');
+      switcher.appendChild(link);
+    });
+    wrapper.insertBefore(switcher,wrapper.firstChild);
+  } else if(switcher.parentElement!==wrapper) {
+    wrapper.insertBefore(switcher,wrapper.firstChild);
+  }
+  nav.setAttribute('data-lang-nav-version','20261113-nav3');
+  // Ensure header switch layout still works if a browser has the older CSS cached.
+  if(!document.getElementById('m29-language-nav-runtime')){
+    var css=document.createElement('style');
+    css.id='m29-language-nav-runtime';
+    css.textContent="\n/* M29 language-switch v3: independent page-level navigation fix */\n#navbar {gap:clamp(7px,1vw,15px);}\n#navbar .nav-links {min-width:0; flex:0 1 auto; margin-left:auto;}\n#navbar .nav-actions {display:flex!important; flex:0 0 auto; align-items:center; justify-content:flex-end; gap:9px; margin-left:clamp(4px,.65vw,12px); position:relative; z-index:10;}\n#navbar .nav-actions .language-switch {display:inline-flex!important; visibility:visible!important; opacity:1!important; position:relative!important; flex:0 0 auto!important; align-items:center!important; margin:0!important; white-space:nowrap!important; border-radius:12px; padding:3px; border:1px solid rgba(199,164,81,.35); background:rgba(255,255,255,.04);}\n#navbar .nav-actions .lang-option {display:inline-flex!important; align-items:center; justify-content:center; min-width:32px; height:34px; padding:0 8px; font:600 11px/1 'DM Sans',Arial,sans-serif; letter-spacing:.04em; text-decoration:none; border-radius:8px; color:rgba(255,255,255,.82); cursor:pointer;}\n#navbar .nav-actions .lang-option.is-active {background:linear-gradient(135deg,#dcc078,#b6903c); color:#1c180f!important;}\n#navbar .nav-actions .lang-option:not(.is-active):hover {background:rgba(255,255,255,.12); color:#fff;}\n#navbar .nav-actions .lang-option:focus-visible {outline:2px solid #dcc078; outline-offset:2px;}\n@media (min-width:901px) and (max-width:1150px) {\n  #navbar .nav-actions {gap:5px; margin-left:4px;}\n  #navbar .nav-actions .lang-option {min-width:26px; padding:0 6px; height:32px;}\n}\n@media (max-width:900px) {\n  #navbar .nav-links {display:none!important;}\n  #navbar .nav-actions {margin-left:auto; gap:7px;}\n  #navbar .nav-actions .hamburger {display:flex; flex-shrink:0;}\n}\n@media (max-width:420px) {\n  #navbar {gap:6px; padding-left:10px; padding-right:9px;}\n  #navbar .logo-wrap {min-width:0; padding:4px 5px;}\n  #navbar .logo-img {max-width:130px!important;}\n  #navbar .nav-actions {gap:5px;}\n  #navbar .nav-actions .language-switch {padding:2px;}\n  #navbar .nav-actions .lang-option {min-width:28px; height:32px; padding:0 6px; font-size:10px;}\n}\n@media (max-width:350px) {\n  #navbar .logo-img {max-width:112px!important;}\n  #navbar .nav-actions .lang-option {min-width:25px; padding:0 4px;}\n}\n";
+    document.head.appendChild(css);
+  }
+})();
+
 // CURSOR
 var cursor = document.getElementById('cursor');
 var follower = document.getElementById('cursorFollower');
